@@ -1,295 +1,381 @@
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio</title>
-  <meta name="description" content="Speaker portfolio for Dr. Samuel “Dr. Sam” Moonzwe (EMI). Bookings, ministry impact, programs, and engagement arrangements for churches and conferences." />
+  <title>Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio (EMI)</title>
+  <meta name="description" content="Invite Dr. Samuel “Dr. Sam” Moonzwe to speak. View EMI programs, ministry impact, and booking details for churches and conferences." />
 
-  <!-- Open Graph (share preview) -->
-  <meta property="og:title" content="Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio" />
-  <meta property="og:description" content="Book Dr. Sam for churches, missions events, conferences, and leadership trainings. View ministry impact + EMI programs." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio (EMI)" />
+  <meta property="og:description" content="Book Dr. Sam for churches, missions events, conferences, and leadership trainings. Explore EMI programs and impact." />
   <meta property="og:type" content="website" />
-  <!-- Optional: add a real image later (recommended). Example: images/og.jpg -->
-  <!-- <meta property="og:image" content="https://isaacmoonzwe.github.io/dr-samuel-moonzwe-speaker-portfolio/images/og.jpg" /> -->
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #f5f1e8;
-      --forest: #1a3a2e;
-      --forest-2:#2d5a4a;
-      --charcoal:#1b1b1b;
-      --cream:#f5f1e8;
-      --accent:#d4c5b0;
-      --muted:#6b6b6b;
+      --bg:#f5f1e8;
       --white:#ffffff;
+      --forest:#163a2a;
+      --forest2:#245341;
+      --gold:#d4c5b0;
+      --text:#1b1b1b;
+      --muted:#5e5e5e;
+      --line:rgba(212,197,176,.55);
+      --shadow:0 18px 55px rgba(0,0,0,.10);
+      --radius:22px;
     }
 
     *{ box-sizing:border-box; }
-    html, body { height:100%; }
+    html, body{ margin:0; padding:0; }
     body{
-      margin:0;
       font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--charcoal);
+      background:var(--bg);
+      color:var(--text);
       overflow-x:hidden;
     }
 
-    a { color: inherit; }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
 
-    .container{
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-    .section{
-      padding: clamp(56px, 6vw, 92px) 24px;
-    }
-    .section.white{ background: var(--white); }
-    .section.cream{ background: var(--bg); }
-    .section.dark{ background: var(--forest); color: var(--cream); }
+    .container{ max-width:1140px; margin:0 auto; }
+    .section{ padding:clamp(56px, 6vw, 92px) 24px; }
+    .white{ background:var(--white); }
+    .cream{ background:var(--bg); }
+    .dark{ background:linear-gradient(135deg, var(--forest) 0%, var(--forest2) 100%); color:var(--bg); }
 
+    /* HERO */
     .hero{
       position:relative;
-      background: radial-gradient(900px 600px at 15% 20%, rgba(245,241,232,0.22), transparent 60%),
-                  radial-gradient(900px 600px at 80% 30%, rgba(212,197,176,0.18), transparent 60%),
-                  linear-gradient(135deg, var(--forest) 0%, var(--forest-2) 100%);
-      color: var(--cream);
-      padding: clamp(64px, 8vw, 110px) 24px;
+      padding:clamp(70px, 8vw, 112px) 24px;
+      background:
+        radial-gradient(900px 600px at 15% 20%, rgba(245,241,232,0.22), transparent 60%),
+        radial-gradient(900px 600px at 85% 30%, rgba(212,197,176,0.16), transparent 60%),
+        linear-gradient(135deg, var(--forest) 0%, var(--forest2) 100%);
+      color:var(--bg);
     }
     .hero:after{
       content:"";
       position:absolute;
-      inset:auto 0 -1px 0;
-      height:60px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0), var(--bg));
+      left:0; right:0; bottom:-1px;
+      height:64px;
+      background:linear-gradient(to bottom, rgba(0,0,0,0), var(--bg));
       pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap:28px;
+      align-items:center;
+    }
+    @media (max-width:980px){
+      .hero-grid{ grid-template-columns:1fr; }
     }
 
     .kicker{
       display:inline-flex;
-      gap:.5rem;
       align-items:center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(212,197,176,0.45);
-      background: rgba(245,241,232,0.10);
-      color: var(--cream);
-      font-weight: 700;
-      letter-spacing: .02em;
-      font-size: .95rem;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(212,197,176,.55);
+      background:rgba(245,241,232,.10);
+      font-weight:800;
+      letter-spacing:.02em;
+      font-size:.95rem;
     }
-    h1{
-      margin: 14px 0 8px;
-      font-size: clamp(38px, 4.8vw, 64px);
-      line-height: 1.06;
-      letter-spacing: -0.02em;
-    }
-    .subhead{
-      font-size: clamp(16px, 2.2vw, 22px);
-      color: rgba(245,241,232,0.85);
-      font-weight: 500;
-      max-width: 56ch;
+    .kdot{
+      width:10px; height:10px; border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 4px rgba(212,197,176,.18);
+      flex:0 0 auto;
     }
 
+    h1{
+      margin:14px 0 10px;
+      font-size:clamp(38px, 4.8vw, 64px);
+      line-height:1.06;
+      letter-spacing:-.02em;
+      font-weight:900;
+    }
+    .subhead{
+      margin:0;
+      font-size:clamp(16px, 2.2vw, 22px);
+      color:rgba(245,241,232,.88);
+      font-weight:500;
+      max-width:62ch;
+      line-height:1.55;
+    }
+
+    /* Buttons (alignment fix) */
+    .btn-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:.6rem;
-      padding: 14px 18px;
-      border-radius: 14px;
-      font-weight: 800;
-      text-decoration:none;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
-      user-select:none;
-      cursor:pointer;
-      border: 2px solid transparent;
+      padding:14px 18px;
+      border-radius:16px;
+      border:2px solid transparent;
+      font-weight:900;
+      line-height:1;              /* alignment fix */
       white-space:nowrap;
+      user-select:none;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
     }
+    .btn svg{ width:18px; height:18px; display:block; flex:0 0 auto; } /* icon alignment fix */
     .btn-primary{
-      background: var(--cream);
-      color: var(--forest);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.20);
+      background:var(--bg);
+      color:var(--forest);
+      box-shadow:0 14px 34px rgba(0,0,0,.22);
     }
-    .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 38px rgba(0,0,0,0.24); }
+    .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 44px rgba(0,0,0,.26); }
     .btn-secondary{
-      background: rgba(245,241,232,0.12);
-      color: var(--cream);
-      border-color: rgba(212,197,176,0.55);
+      background:rgba(245,241,232,.12);
+      border-color:rgba(212,197,176,.55);
+      color:var(--bg);
     }
-    .btn-secondary:hover{ transform: translateY(-2px); background: rgba(245,241,232,0.18); }
+    .btn-secondary:hover{ transform:translateY(-2px); background:rgba(245,241,232,.18); }
 
-    .card{
-      background: var(--white);
-      border: 1px solid rgba(212,197,176,0.45);
-      border-radius: 20px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.08);
-    }
-
+    /* Image frames */
     .img-frame{
-      position:relative;
-      border-radius: 22px;
+      border-radius:var(--radius);
       overflow:hidden;
-      border: 1px solid rgba(212,197,176,0.60);
-      background:
-        linear-gradient(135deg, rgba(245,241,232,0.10), rgba(245,241,232,0.02)),
-        radial-gradient(600px 300px at 20% 20%, rgba(212,197,176,0.25), transparent 60%),
-        radial-gradient(600px 300px at 80% 80%, rgba(245,241,232,0.18), transparent 55%);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.18);
-      min-height: 320px;
+      border:1px solid rgba(212,197,176,.55);
+      background:rgba(245,241,232,.06);
+      box-shadow:0 24px 70px rgba(0,0,0,.18);
+      min-height:340px;
     }
-    .img-frame.large{ min-height: 460px; }
-    .img-frame.tall{ min-height: 560px; }
+    .img-frame.large{ min-height:460px; }
+    .img-frame.tall{ min-height:560px; }
+    .img-frame img{ width:100%; height:100%; object-fit:cover; }
 
-    .img-frame .ph{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 22px;
-      text-align:center;
-      color: rgba(245,241,232,0.92);
-      font-weight: 800;
-      letter-spacing: .01em;
-    }
-    .img-frame .ph small{
-      display:block;
-      margin-top: 10px;
-      font-weight: 500;
-      color: rgba(245,241,232,0.80);
-      letter-spacing: 0;
-    }
-    .img-frame img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .hero-grid{
-      display:grid;
-      gap: 28px;
-      align-items:center;
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .img-frame.large{ min-height: 380px; }
-    }
-
+    /* Metrics */
     .metrics{
       display:grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 14px;
-      margin-top: 28px;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:14px;
+      margin-top:26px;
     }
-    @media (max-width: 980px){
-      .metrics{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    @media (max-width:980px){
+      .metrics{ grid-template-columns:repeat(2, minmax(0,1fr)); }
     }
     .metric{
-      padding: 16px 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(212,197,176,0.35);
-      background: rgba(245,241,232,0.08);
+      border:1px solid rgba(212,197,176,.30);
+      background:rgba(245,241,232,.08);
+      border-radius:18px;
+      padding:16px;
+      min-height:92px; /* alignment fix */
+      display:flex; flex-direction:column; justify-content:center;
     }
     .metric .num{
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      color: var(--cream);
-      margin-bottom: 4px;
+      font-size:28px;
+      font-weight:900;
+      letter-spacing:-.01em;
+      margin:0 0 4px 0;
     }
     .metric .lbl{
-      font-size: 13.5px;
-      color: rgba(245,241,232,0.82);
-      line-height: 1.35;
+      margin:0;
+      font-size:13.5px;
+      line-height:1.35;
+      color:rgba(245,241,232,.84);
+      font-weight:500;
     }
 
+    /* Cards / layout */
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
     .split{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
       align-items:center;
     }
-    @media (max-width: 980px){
-      .split{ grid-template-columns: 1fr; }
-      .img-frame.tall{ min-height: 420px; }
+    @media (max-width:980px){ .split{ grid-template-columns:1fr; } }
+
+    h2{
+      margin:0 0 12px;
+      font-weight:900;
+      color:var(--forest);
+      font-size:clamp(26px, 3vw, 40px);
+      letter-spacing:-.01em;
+      line-height:1.15;
     }
+    .p{
+      margin:0;
+      color:#2b2b2b;
+      line-height:1.75;
+      font-size:15.5px;
+    }
+    .muted{ color:var(--muted); }
+
+    /* Programs */
+    .programs-top{
+      text-align:center;
+      max-width:980px;
+      margin:0 auto;
+    }
+    .program-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:14px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(212,197,176,.60);
+      background:rgba(245,241,232,.75);
+      font-weight:800;
+      color:var(--forest);
+      font-size:13.5px;
+    }
+    .pill svg{ width:16px; height:16px; display:block; }
 
     .programs-grid{
       display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 18px;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+      margin-top:22px;
     }
-    @media (max-width: 980px){
-      .programs-grid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width:980px){ .programs-grid{ grid-template-columns:1fr; } }
+
     .prog{
-      padding: 18px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(212,197,176,0.55);
-      background: rgba(245,241,232,0.70);
+      border-radius:18px;
+      border:1px solid rgba(212,197,176,.65);
+      background:rgba(245,241,232,.80);
+      padding:18px;
+      display:flex; flex-direction:column; gap:6px;
+      min-height:140px; /* alignment fix */
     }
     .prog h3{
-      margin: 0 0 6px;
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--forest);
+      margin:0;
+      font-size:18px;
+      font-weight:900;
+      color:var(--forest);
+      line-height:1.25;
     }
-    .prog p{ margin:0; color:#333; line-height:1.55; font-size: 15.5px; }
+    .prog p{
+      margin:0;
+      font-size:15px;
+      line-height:1.6;
+      color:#2b2b2b;
+    }
 
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width:980px){ .gallery{ grid-template-columns:1fr; } }
+
+    figure{
+      margin:0;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(212,197,176,.60);
+      background:var(--white);
+      box-shadow:0 16px 44px rgba(0,0,0,.08);
+    }
+    figure img{ width:100%; height:260px; object-fit:cover; }
+    figcaption{
+      padding:12px 14px;
+      font-size:13.5px;
+      line-height:1.45;
+      color:#2b2b2b;
+      font-weight:600;
+    }
+
+    /* Footer */
     footer{
-      background: #151515;
-      color: rgba(245,241,232,0.75);
-      padding: 26px 24px;
+      background:#141414;
+      color:rgba(245,241,232,.72);
+      padding:26px 24px;
       text-align:center;
-      font-size: 13px;
+      font-size:13px;
+      line-height:1.5;
+    }
+    .foot-links{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:10px;
+      color:rgba(245,241,232,.82);
+      font-weight:700;
+    }
+    .foot-links a{
+      text-decoration:underline;
+      text-underline-offset:4px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===================== CONFIG (edit these only) ===================== -->
+  <!-- ===================== CONFIG (edit only if needed) ===================== -->
   <script>
-    // Change these values once and the page updates automatically.
     window.SPEAKER_PAGE = {
-      contactEmail: "ministry@example.com",
+      contactEmail: "admin@empowermentministries.org",
       speakerName: "Dr. Samuel “Dr. Sam” Moonzwe",
       footerOrg: "Empowerment Ministries International",
-      footerYear: "2025"
+      footerYear: "2025",
+      aboutUrl: "https://empowermentministries.org/about/",
+      programsUrl: "https://empowermentministries.org/programs/",
+      girlsDormUrl: "https://empowermentministries.org/programs/"
     };
   </script>
 
   <!-- ===================== HERO ===================== -->
   <header class="hero">
     <div class="container hero-grid">
+
       <div>
-        <div class="kicker">Speaker Portfolio • Empowerment Ministries International</div>
+        <div class="kicker"><span class="kdot"></span> Speaker Portfolio • Empowerment Ministries International</div>
 
         <h1 id="hero-name">Dr. Samuel “Dr. Sam” Moonzwe</h1>
 
-        <p id="hero-subtitle" class="subhead">
-          Mission Strategist • Bible Teacher • International Ministry Leader
+        <p class="subhead" style="font-weight:700; margin-bottom:8px;">
+          Faith-driven leadership • Missions training • Global church strengthening
         </p>
 
-        <p id="hero-description" class="subhead" style="margin-top:14px; max-width:62ch;">
-          Strengthening churches and equipping leaders through biblically grounded teaching, global mission experience, and faithful partnership with the local church.
+        <p class="subhead">
+          Invite Dr. Sam to speak at your church or conference—bringing biblically grounded teaching, cross-cultural mission experience, and a practical call to Gospel action.
         </p>
 
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:22px;">
+        <div class="btn-row">
           <a class="btn btn-primary" id="primary-cta" href="#">
+            <!-- mail icon -->
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 6.5h16v11H4v-11Z" stroke="currentColor" stroke-width="2" />
+              <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="2" />
+            </svg>
             Request a Speaker
           </a>
+
           <a class="btn btn-secondary" id="secondary-cta" href="#">
+            <!-- calendar icon -->
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 3v3M17 3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4.5 7h15v13h-15V7Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M7.5 11h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
             Schedule a 15-Minute Ministry Call
           </a>
         </div>
@@ -297,81 +383,93 @@
         <div class="metrics" aria-label="Ministry impact metrics">
           <div class="metric">
             <div class="num">10,000+</div>
-            <div class="lbl">Gospel shared with over 10,000 people in 2025</div>
+            <p class="lbl">Gospel shared with over 10,000 people in 2025</p>
           </div>
           <div class="metric">
             <div class="num">~60</div>
-            <div class="lbl">First girls dorm providing safety for about 60 girls</div>
+            <p class="lbl">First girls dorm providing safety for about 60 girls</p>
           </div>
           <div class="metric">
             <div class="num">4</div>
-            <div class="lbl">Water wells sunk in communities</div>
+            <p class="lbl">Water wells sunk for community access to clean water</p>
           </div>
           <div class="metric">
             <div class="num">Hundreds</div>
-            <div class="lbl">International conference attendance (hundreds)</div>
+            <p class="lbl">International conference attendance (hundreds present)</p>
           </div>
         </div>
       </div>
 
-      <div class="img-frame large" aria-label="Speaker image placeholder">
-        <!-- Replace later with: <img src="images/speaker-hero.jpg" alt="Dr. Sam Moonzwe speaking"> -->
-        <div class="ph">
-          Speaker Photo Placeholder
-          <small>Replace with a high-quality speaking photo for maximum credibility.</small>
-        </div>
+      <!-- HERO IMAGE: Dr. Sam + Maud (requested first) -->
+      <div class="img-frame large" aria-label="Dr. Sam and Maud at Mukalakwa Dorm Handover">
+        <img src="images/dr-sam-maud-mukalakwa-dorm-handover.png" alt="Dr. Sam and Maud at Mukalakwa Dorm handover">
       </div>
+
     </div>
   </header>
 
-  <!-- ===================== ABOUT EMI ===================== -->
+  <!-- ===================== ABOUT / QUICK LINKS ===================== -->
   <section class="section white">
-    <div class="container" style="max-width: 980px; text-align:center;">
-      <h2 style="font-size: clamp(26px, 3vw, 38px); margin:0 0 12px; font-weight:900; color: var(--forest);">
-        About Empowerment Ministries International (EMI)
-      </h2>
-      <p style="margin:0 auto; max-width: 78ch; font-size: 16.5px; line-height:1.7; color:#2b2b2b;">
-        Empowerment Ministries International (EMI) partners with local churches to strengthen biblical leadership, deepen missions engagement, and equip the Body of Christ through teaching rooted in Scripture and lived global ministry.
+    <div class="container" style="max-width:980px; text-align:center;">
+      <h2>Empowerment Ministries International (EMI)</h2>
+      <p class="p" style="max-width:82ch; margin:0 auto;">
+        EMI partners with the local church to equip leaders, strengthen discipleship, and advance Gospel engagement through training, evangelism, and community development—serving in Zambia and beyond.
       </p>
-      <p style="margin:12px auto 0; max-width: 78ch; font-size: 14px; color: var(--muted);">
-        EMI is a registered 501(c)(3) nonprofit organization in the State of California, serving churches across the United States and internationally.
-      </p>
+
+      <div class="program-links" style="margin-top:16px;">
+        <a class="pill" id="about-link" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 17v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 7h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M4.5 12a7.5 7.5 0 1 0 15 0 7.5 7.5 0 0 0-15 0Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          About EMI
+        </a>
+
+        <a class="pill" id="programs-link" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 7h12M6 12h12M6 17h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          EMI Programs
+        </a>
+
+        <a class="pill" id="girlsdorm-link" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s7-4.35 7-10.2A4.8 4.8 0 0 0 12 7a4.8 4.8 0 0 0-7 3.8C5 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          Girls Dorm Project
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- ===================== SPEAKER PROFILE ===================== -->
   <section class="section cream">
     <div class="container split">
-      <div class="img-frame tall" aria-label="Speaker portrait placeholder">
-        <!-- Replace later with: <img src="images/speaker-portrait.jpg" alt="Dr. Sam Moonzwe portrait"> -->
-        <div class="ph">
-          Speaker Portrait Placeholder
-          <small>Replace with a clean portrait or podium shot.</small>
-        </div>
+      <div class="img-frame tall" aria-label="EMI ribbon ceremony">
+        <img src="images/emi-ribbon-ceremony.png" alt="EMI ribbon ceremony">
       </div>
 
-      <div class="card" style="padding: 26px;">
-        <h2 style="margin:0 0 10px; font-size: 28px; font-weight: 900; color: var(--forest);">
-          Speaker Profile
-        </h2>
+      <div class="card">
+        <h2>Speaker Profile</h2>
 
-        <p style="margin:0 0 12px; line-height:1.75; font-size: 15.5px; color:#242424;">
-          Dr. Samuel “Dr. Sam” Moonzwe is the co-founder and director of Empowerment Ministries International (EMI), a Christ-centered ministry committed to strengthening churches and advancing gospel engagement across Africa and the global Church.
+        <p class="p" style="margin-bottom:12px;">
+          Dr. Samuel “Dr. Sam” Moonzwe serves as a mission strategist and Bible teacher through Empowerment Ministries International (EMI), equipping churches and leaders for faithful ministry and Gospel engagement.
         </p>
 
-        <p style="margin:0 0 12px; line-height:1.75; font-size: 15.5px; color:#242424;">
-          He holds a Doctorate in Missiology and multiple master’s degrees in Theology, Intercultural Studies, Business Administration, and Management. He also serves faithfully in Bakersfield, California, helping lead the Missions Department and the School of Ministry.
+        <p class="p" style="margin-bottom:12px;">
+          He holds a Doctorate in Missiology and master’s degrees in Theology, Intercultural Studies, Business Administration, and Management—bringing both scholarly depth and practical leadership experience to the pulpit and classroom.
         </p>
 
-        <p style="margin:0; line-height:1.75; font-size: 15.5px; color:#242424;">
-          His background includes senior executive leadership, including service as CEO of a major Zambian corporation—uniting boardroom rigor with frontline mission experience.
+        <p class="p">
+          He also serves in Bakersfield, California, helping lead the Missions Department and the School of Ministry—supporting the local church in raising disciples and sending workers into the harvest.
         </p>
 
-        <div style="margin-top:16px; padding:14px 14px; border-radius:16px; background: rgba(212,197,176,0.25); border:1px solid rgba(212,197,176,0.55);">
-          <div style="font-weight:900; color: var(--forest); margin-bottom:6px;">Booking Contact</div>
-          <div style="color:#2b2b2b; font-weight:800;" id="booking-email">ministry@example.com</div>
-          <div style="font-size: 13px; color: var(--muted); margin-top:4px;">
-            Prefer email? Click “Request a Speaker” above.
+        <div style="margin-top:16px; padding:14px; border-radius:18px; background:rgba(212,197,176,.22); border:1px solid rgba(212,197,176,.60);">
+          <div style="font-weight:900; color:var(--forest); margin-bottom:6px;">Booking Contact</div>
+          <div id="booking-email" style="font-weight:900;">admin@empowermentministries.org</div>
+          <div class="muted" style="font-size:13px; margin-top:4px;">
+            For fastest response, use “Request a Speaker” above (pre-fills the email subject).
           </div>
         </div>
       </div>
@@ -381,112 +479,118 @@
   <!-- ===================== EMI PROGRAMS ===================== -->
   <section class="section white">
     <div class="container">
-      <div style="text-align:center; max-width: 980px; margin:0 auto;">
-        <h2 style="font-size: clamp(28px, 3.2vw, 42px); margin:0 0 10px; font-weight: 900; color: var(--forest);">
-          EMI Programs
-        </h2>
-        <p style="margin:0 auto; max-width: 76ch; color:#2b2b2b; line-height:1.7;">
-          A snapshot of key programs through which EMI equips leaders, shares the Gospel, and supports communities with practical care.
+      <div class="programs-top">
+        <h2>EMI Programs</h2>
+        <p class="p" style="max-width:78ch; margin:0 auto;">
+          These programs reflect EMI’s focus: strengthening the church, sharing the Gospel, and serving communities with practical care that honors Christ.
         </p>
       </div>
 
-      <div class="img-frame large" style="margin-top:22px;" aria-label="Programs image placeholder">
-        <!-- Replace later with: <img src="images/programs-wide.jpg" alt="EMI programs in action"> -->
-        <div class="ph">
-          EMI Programs Image Placeholder
-          <small>Use a wide photo collage: training, evangelism, dorm, water wells.</small>
-        </div>
+      <!-- Wide image above programs -->
+      <div class="img-frame large" style="margin-top:22px;" aria-label="EMI director with girls from Mukalakwa">
+        <img src="images/emi-director-with-girls-mukalakwa.png" alt="EMI director with girls from Mukalakwa school">
       </div>
 
-      <div class="programs-grid" style="margin-top:22px;">
+      <div class="programs-grid">
         <div class="prog">
           <h3>Pastoral Training &amp; Church Planting</h3>
-          <p>Equipping pastors and church leaders with biblical depth, leadership formation, and practical tools for healthy churches and sustainable planting.</p>
+          <p>Equipping pastors and leaders with biblical depth, ministry skill, and healthy leadership practices to strengthen churches and support sustainable church planting.</p>
         </div>
 
         <div class="prog">
           <h3>Street &amp; Rural Evangelism</h3>
-          <p>Sharing Christ in public spaces and remote communities, with clear Gospel proclamation and compassionate presence.</p>
+          <p>Gospel proclamation in public spaces and remote communities—supporting local believers, cultivating discipleship, and strengthening community witness.</p>
         </div>
 
         <div class="prog">
           <h3>Girls Rescue Dorm Project</h3>
-          <p>Providing safe residential housing that helps protect vulnerable girls and support continued education in a secure environment.</p>
+          <p>Protective housing that supports continued education and safety—helping vulnerable girls remain in school and grow in stability and hope.</p>
         </div>
 
         <div class="prog">
           <h3>Community Development</h3>
-          <p>Strengthening communities through clean water initiatives and faith-rooted support that uplifts families and local churches.</p>
+          <p>Practical support initiatives including clean water access and community uplift—meeting needs while strengthening the church’s local presence.</p>
         </div>
+      </div>
+
+      <div style="text-align:center; margin-top:18px;">
+        <a class="btn btn-primary" id="programs-cta" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 7h12M6 12h12M6 17h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          View All EMI Programs
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SPEAKING TOPICS ===================== -->
+  <!-- ===================== IMPACT GALLERY ===================== -->
   <section class="section cream">
-    <div class="container" style="max-width: 980px;">
-      <h2 style="text-align:center; font-size: clamp(26px, 3vw, 40px); margin:0 0 18px; font-weight: 900; color: var(--forest);">
-        Speaking Topics &amp; Ministry Focus
-      </h2>
+    <div class="container" style="max-width:1140px;">
+      <h2 style="text-align:center;">Ministry in Action</h2>
+      <p class="p" style="text-align:center; max-width:80ch; margin:0 auto;">
+        Real moments from the field—evangelism, community care, education support, and development initiatives.
+      </p>
 
-      <div class="card" style="padding: 22px;">
-        <div style="display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px;">
-          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
-            Biblical Leadership &amp; Servant Ministry
-          </div>
-          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
-            Missions &amp; the Global Church
-          </div>
-          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
-            Discipleship &amp; Gospel Engagement
-          </div>
-          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
-            Cross-Cultural Ministry &amp; Partnership
-          </div>
-        </div>
+      <div class="gallery">
+        <figure>
+          <img src="images/emi-urban-rural-evangelism-team.png" alt="EMI urban and rural evangelism team">
+          <figcaption>Street &amp; Rural Evangelism — Gospel outreach teams serving communities.</figcaption>
+        </figure>
 
-        <p style="margin:14px 0 0; color:#2b2b2b; line-height:1.7; font-size: 14.5px;">
-          Ideal settings include Sunday services, missions emphasis events, conferences, leadership retreats, and Schools of Ministry.
-        </p>
+        <figure>
+          <img src="images/emi-school-uniforms-distribution.jpg" alt="EMI school kids receiving uniforms">
+          <figcaption>Education Support — School children receiving uniforms and care.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/emi-zambia-borehole-handover.png" alt="EMI Zambia borehole handover">
+          <figcaption>Community Development — Borehole handover supporting access to clean water.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/emi-sanitary-kits-distribution.png" alt="Sanitary kits distribution">
+          <figcaption>Health &amp; Dignity — Sanitary kits distribution supporting girls and women.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/emi-womens-empowerment-program.png" alt="Women empowerment program">
+          <figcaption>Women’s Empowerment — Strengthening families and community resilience.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/emi-school-visit-leadership.png" alt="School visit with leadership">
+          <figcaption>Community Partnership — School visit with leadership engagement and support.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- ===================== ARRANGEMENTS ===================== -->
   <section class="section white">
-    <div class="container" style="max-width: 980px;">
-      <h2 style="text-align:center; font-size: clamp(26px, 3vw, 40px); margin:0 0 18px; font-weight: 900; color: var(--forest);">
-        Engagement Arrangements
-      </h2>
+    <div class="container" style="max-width:980px;">
+      <h2 style="text-align:center;">Engagement Arrangements</h2>
 
       <div class="split" style="align-items:stretch;">
-        <div class="card" style="padding: 22px;">
-          <div style="font-weight: 900; color: var(--forest); margin-bottom:8px;">Honorarium</div>
-          <p style="margin:0; color:#2b2b2b; line-height:1.7;">
-            Speaking engagements are based on a free-will offering. There is no minimum honorarium requirement.
-          </p>
+        <div class="card" style="display:flex; flex-direction:column; gap:12px;">
+          <div>
+            <div style="font-weight:900; color:var(--forest); margin-bottom:6px;">Honorarium</div>
+            <p class="p">Speaking engagements are offered on a free-will basis. There is no minimum honorarium requirement.</p>
+          </div>
 
-          <div style="height:12px;"></div>
+          <div>
+            <div style="font-weight:900; color:var(--forest); margin-bottom:6px;">Travel &amp; Lodging (When Applicable)</div>
+            <p class="p">When distance or schedule requires, assistance may be requested for airfare/mileage and lodging. Details are discussed in advance.</p>
+          </div>
 
-          <div style="font-weight: 900; color: var(--forest); margin-bottom:8px;">Travel &amp; Lodging (When Applicable)</div>
-          <p style="margin:0; color:#2b2b2b; line-height:1.7;">
-            Assistance may be requested for airfare or mileage and one night of lodging when distance or schedule requires. Logistics are discussed in advance.
-          </p>
-
-          <div style="height:12px;"></div>
-
-          <div style="font-weight: 900; color: var(--forest); margin-bottom:8px;">Involvement Cards</div>
-          <p style="margin:0; color:#2b2b2b; line-height:1.7;">
-            When appropriate, we may provide ministry involvement cards for attendees who want updates or partnership information. These are not pledge cards.
-          </p>
+          <div>
+            <div style="font-weight:900; color:var(--forest); margin-bottom:6px;">Resource Table (Optional)</div>
+            <p class="p">If appropriate, EMI may bring ministry materials and involvement cards for attendees who want updates. These are not pledge cards.</p>
+          </div>
         </div>
 
-        <div class="img-frame large" aria-label="Engagement image placeholder">
-          <!-- Replace later with: <img src="images/engagement.jpg" alt="Church engagement"> -->
-          <div class="ph">
-            Engagement Image Placeholder
-            <small>Use an image of a church setting, leaders praying, or a conference stage.</small>
-          </div>
+        <div class="img-frame large" aria-label="EMI director with girls - programs support">
+          <img src="images/emi-director-with-girls-mukalakwa.png" alt="EMI director with girls from Mukalakwa">
         </div>
       </div>
     </div>
@@ -494,58 +598,98 @@
 
   <!-- ===================== FINAL CTA ===================== -->
   <section class="section dark">
-    <div class="container" style="text-align:center; max-width: 980px;">
-      <h2 style="margin:0 0 10px; font-size: clamp(28px, 3.5vw, 46px); font-weight: 900;">
-        Ready to Invite Dr. Moonzwe?
-      </h2>
-      <p style="margin:0 auto 18px; max-width: 70ch; line-height:1.7; color: rgba(245,241,232,0.85);">
-        We value the local church and approach every invitation with humility, accountability, and respect for pastoral leadership.
-        If you’re considering an engagement, we would be honored to connect.
+    <div class="container" style="max-width:980px; text-align:center;">
+      <h2 style="color:var(--bg); margin-bottom:10px;">Ready to Invite Dr. Moonzwe?</h2>
+
+      <p class="subhead" style="max-width:74ch; margin:0 auto;">
+        We honor pastoral leadership and approach every invitation with humility, clarity, and care. If you’re considering a Sunday service, missions emphasis, leadership retreat, or conference, we would be honored to connect.
       </p>
 
-      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
-        <a class="btn btn-primary" id="cta-bottom-primary" href="#">Request a Speaker</a>
-        <a class="btn btn-secondary" id="cta-bottom-secondary" href="#">Schedule a 15-Minute Call</a>
+      <div class="btn-row" style="justify-content:center; margin-top:18px;">
+        <a class="btn btn-primary" id="cta-bottom-primary" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6.5h16v11H4v-11Z" stroke="currentColor" stroke-width="2" />
+            <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="2" />
+          </svg>
+          Request a Speaker
+        </a>
+        <a class="btn btn-secondary" id="cta-bottom-secondary" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 3v3M17 3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4.5 7h15v13h-15V7Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M7.5 11h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Schedule a 15-Minute Call
+        </a>
       </div>
 
-      <div style="margin-top:18px; display:inline-block; padding: 12px 16px; border-radius: 16px; border:1px solid rgba(212,197,176,0.45); background: rgba(0,0,0,0.12);">
+      <div style="margin-top:18px; display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:18px; border:1px solid rgba(212,197,176,.45); background:rgba(0,0,0,.14);">
         <span style="font-weight:900;">Email:</span>
-        <span id="cta-email" style="margin-left:8px; font-weight:800;">ministry@example.com</span>
+        <span id="cta-email" style="font-weight:900;">admin@empowermentministries.org</span>
       </div>
     </div>
   </section>
 
   <footer>
     <div id="footer-text">© 2025 Empowerment Ministries International • A 501(c)(3) nonprofit organization</div>
+    <div class="foot-links">
+      <a id="foot-about" href="#" target="_blank" rel="noopener">About</a>
+      <a id="foot-programs" href="#" target="_blank" rel="noopener">Programs</a>
+    </div>
   </footer>
 
   <script>
-    // Wire up email + CTAs
     (function(){
       const cfg = window.SPEAKER_PAGE || {};
-      const email = cfg.contactEmail || "ministry@example.com";
+      const email = cfg.contactEmail || "admin@empowermentministries.org";
 
-      const nameEl = document.getElementById("hero-name");
-      if (nameEl && cfg.speakerName) nameEl.textContent = cfg.speakerName;
-
+      // Update visible email text
       const bookingEmail = document.getElementById("booking-email");
       const ctaEmail = document.getElementById("cta-email");
       if (bookingEmail) bookingEmail.textContent = email;
       if (ctaEmail) ctaEmail.textContent = email;
 
-      const mailPrimary = `mailto:${email}?subject=Speaker%20Request%20-%20EMI`;
-      const mailSecondary = `mailto:${email}?subject=15-Minute%20Ministry%20Call%20-%20EMI`;
+      // Name
+      const nameEl = document.getElementById("hero-name");
+      if (nameEl && cfg.speakerName) nameEl.textContent = cfg.speakerName;
 
-      const primary = document.getElementById("primary-cta");
-      const secondary = document.getElementById("secondary-cta");
-      const bottomPrimary = document.getElementById("cta-bottom-primary");
-      const bottomSecondary = document.getElementById("cta-bottom-secondary");
+      // Mailto CTAs (booking)
+      const mailPrimary = `mailto:${email}?subject=Speaker%20Request%20-%20EMI&body=Hello%20EMI%20Team%2C%0A%0AI%27d%20like%20to%20invite%20Dr.%20Sam%20Moonzwe%20to%20speak.%0A%0AChurch%2FOrganization%3A%20%0AEvent%20Type%3A%20%0APreferred%20Date(s)%3A%20%0ALocation%3A%20%0AExpected%20Attendance%3A%20%0A%0AThank%20you%2C%0A`;
+      const mailSecondary = `mailto:${email}?subject=15-Minute%20Ministry%20Call%20-%20EMI&body=Hello%20EMI%20Team%2C%0A%0AI%27d%20like%20to%20schedule%20a%2015-minute%20call%20to%20discuss%20a%20speaking%20invitation.%0A%0ABest%20times%20to%20reach%20me%3A%20%0AName%3A%20%0APhone%3A%20%0A%0AThank%20you%2C%0A`;
 
-      if (primary) primary.href = mailPrimary;
-      if (bottomPrimary) bottomPrimary.href = mailPrimary;
-      if (secondary) secondary.href = mailSecondary;
-      if (bottomSecondary) bottomSecondary.href = mailSecondary;
+      const idsPrimary = ["primary-cta","cta-bottom-primary"];
+      const idsSecondary = ["secondary-cta","cta-bottom-secondary"];
 
+      idsPrimary.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.href = mailPrimary;
+      });
+      idsSecondary.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.href = mailSecondary;
+      });
+
+      // Links
+      const aboutUrl = cfg.aboutUrl || "https://empowermentministries.org/about/";
+      const programsUrl = cfg.programsUrl || "https://empowermentministries.org/programs/";
+      const girlsDormUrl = cfg.girlsDormUrl || "https://empowermentministries.org/programs/";
+
+      const aboutLink = document.getElementById("about-link");
+      const programsLink = document.getElementById("programs-link");
+      const girlsDormLink = document.getElementById("girlsdorm-link");
+      const programsCta = document.getElementById("programs-cta");
+
+      if (aboutLink) aboutLink.href = aboutUrl;
+      if (programsLink) programsLink.href = programsUrl;
+      if (girlsDormLink) girlsDormLink.href = girlsDormUrl;
+      if (programsCta) programsCta.href = programsUrl;
+
+      const footAbout = document.getElementById("foot-about");
+      const footPrograms = document.getElementById("foot-programs");
+      if (footAbout) footAbout.href = aboutUrl;
+      if (footPrograms) footPrograms.href = programsUrl;
+
+      // Footer text
       const footer = document.getElementById("footer-text");
       if (footer && cfg.footerOrg && cfg.footerYear) {
         footer.textContent = `© ${cfg.footerYear} ${cfg.footerOrg} • A 501(c)(3) nonprofit organization`;
