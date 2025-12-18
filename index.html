@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sam Moonzwe — Speaker Portfolio</title>
+
+  <!-- Keep your existing SDKs -->
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+
+  <style>
+    /* ===== Typography: POPPINS (as requested) ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+    :root{
+      --bg: #f5f1e8;
+      --forest: #1a3a2e;
+      --forest-2:#2d5a4a;
+      --charcoal:#1b1b1b;
+      --cream:#f5f1e8;
+      --accent:#d4c5b0;
+      --muted:#6b6b6b;
+      --white:#ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--charcoal);
+      overflow-x:hidden;
+    }
+
+    /* ===== Modern hero background ===== */
+    .hero{
+      position:relative;
+      background: radial-gradient(900px 600px at 15% 20%, rgba(245,241,232,0.22), transparent 60%),
+                  radial-gradient(900px 600px at 80% 30%, rgba(212,197,176,0.18), transparent 60%),
+                  linear-gradient(135deg, var(--forest) 0%, var(--forest-2) 100%);
+      color: var(--cream);
+      padding: clamp(64px, 8vw, 110px) 24px;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:auto 0 -1px 0;
+      height:60px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), var(--bg));
+      pointer-events:none;
+    }
+
+    /* ===== Layout helpers ===== */
+    .container{
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .section{
+      padding: clamp(56px, 6vw, 92px) 24px;
+    }
+    .section.white{ background: var(--white); }
+    .section.cream{ background: var(--bg); }
+    .section.dark{ background: var(--forest); color: var(--cream); }
+
+    /* ===== Premium card + shadow ===== */
+    .card{
+      background: var(--white);
+      border: 1px solid rgba(212,197,176,0.45);
+      border-radius: 20px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+    }
+
+    /* ===== Buttons ===== */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.6rem;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration:none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      user-select:none;
+      cursor:pointer;
+      border: 2px solid transparent;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: var(--cream);
+      color: var(--forest);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.20);
+    }
+    .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 38px rgba(0,0,0,0.24); }
+    .btn-secondary{
+      background: rgba(245,241,232,0.12);
+      color: var(--cream);
+      border-color: rgba(212,197,176,0.55);
+    }
+    .btn-secondary:hover{ transform: translateY(-2px); background: rgba(245,241,232,0.18); }
+
+    /* ===== Headings ===== */
+    .kicker{
+      display:inline-flex;
+      gap:.5rem;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(212,197,176,0.45);
+      background: rgba(245,241,232,0.10);
+      color: var(--cream);
+      font-weight: 700;
+      letter-spacing: .02em;
+      font-size: .95rem;
+    }
+    h1{
+      margin: 14px 0 8px;
+      font-size: clamp(38px, 4.8vw, 64px);
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+    }
+    .subhead{
+      font-size: clamp(16px, 2.2vw, 22px);
+      color: rgba(245,241,232,0.85);
+      font-weight: 500;
+      max-width: 56ch;
+    }
+
+    /* ===== Image placeholders (speaker + programs) ===== */
+    .img-frame{
+      position:relative;
+      border-radius: 22px;
+      overflow:hidden;
+      border: 1px solid rgba(212,197,176,0.60);
+      background:
+        linear-gradient(135deg, rgba(245,241,232,0.10), rgba(245,241,232,0.02)),
+        radial-gradient(600px 300px at 20% 20%, rgba(212,197,176,0.25), transparent 60%),
+        radial-gradient(600px 300px at 80% 80%, rgba(245,241,232,0.18), transparent 55%);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+      min-height: 320px;
+    }
+    .img-frame.large{ min-height: 460px; }
+    .img-frame.tall{ min-height: 560px; }
+
+    .img-frame .ph{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 22px;
+      text-align:center;
+      color: rgba(245,241,232,0.92);
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+    .img-frame .ph small{
+      display:block;
+      margin-top: 10px;
+      font-weight: 500;
+      color: rgba(245,241,232,0.80);
+      letter-spacing: 0;
+    }
+
+    .img-frame img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* ===== Hero grid ===== */
+    .hero-grid{
+      display:grid;
+      gap: 28px;
+      align-items:center;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .img-frame.large{ min-height: 380px; }
+    }
+
+    /* ===== Metrics strip ===== */
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    @media (max-width: 980px){
+      .metrics{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    .metric{
+      padding: 16px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(212,197,176,0.35);
+      background: rgba(245,241,232,0.08);
+    }
+    .metric .num{
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+    .metric .lbl{
+      font-size: 13.5px;
+      color: rgba(245,241,232,0.82);
+      line-height: 1.35;
+    }
+
+    /* ===== Split sections with big images + little text ===== */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items:center;
+    }
+    @media (max-width: 980px){
+      .split{ grid-template-columns: 1fr; }
+      .img-frame.tall{ min-height: 420px; }
+    }
+
+    /* ===== Program cards ===== */
+    .programs-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    @media (max-width: 980px){
+      .programs-grid{ grid-template-columns: 1fr; }
+    }
+    .prog{
+      padding: 18px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(212,197,176,0.55);
+      background: rgba(245,241,232,0.70);
+    }
+    .prog h3{
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--forest);
+    }
+    .prog p{ margin:0; color:#333; line-height:1.55; font-size: 15.5px; }
+
+    /* ===== Footer ===== */
+    footer{
+      background: #151515;
+      color: rgba(245,241,232,0.75);
+      padding: 26px 24px;
+      text-align:center;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== HERO (dynamic + big image) ===================== -->
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="kicker">Speaker Portfolio • Empowerment Ministries International</div>
+
+        <h1 id="hero-name">Dr. Samuel “Dr. Sam” Moonzwe</h1>
+
+        <p id="hero-subtitle" class="subhead">
+          Mission Strategist • Bible Teacher • International Ministry Leader
+        </p>
+
+        <p id="hero-description" class="subhead" style="margin-top:14px; max-width:62ch;">
+          Strengthening churches and equipping leaders through biblically grounded teaching, global mission experience, and faithful partnership with the local church.
+        </p>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:22px;">
+          <a class="btn btn-primary" id="primary-cta" href="mailto:ministry@example.com?subject=Speaker%20Request%20-%20EMI">
+            Request a Speaker
+          </a>
+          <a class="btn btn-secondary" id="secondary-cta" href="mailto:ministry@example.com?subject=15-Minute%20Ministry%20Call%20-%20EMI">
+            Schedule a 15-Minute Ministry Call
+          </a>
+        </div>
+
+        <!-- Impact metrics (2025 highlights you specified) -->
+        <div class="metrics" aria-label="Ministry impact metrics">
+          <div class="metric">
+            <div class="num">10,000+</div>
+            <div class="lbl">Gospel shared with over 10,000 people in 2025</div>
+          </div>
+          <div class="metric">
+            <div class="num">~60</div>
+            <div class="lbl">First girls dorm providing safety for about 60 girls</div>
+          </div>
+          <div class="metric">
+            <div class="num">4</div>
+            <div class="lbl">Water wells sunk in communities</div>
+          </div>
+          <div class="metric">
+            <div class="num">Hundreds</div>
+            <div class="lbl">International conference attendance (hundreds)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big Speaker Image Placeholder -->
+      <div class="img-frame large" aria-label="Speaker image placeholder">
+        <!-- Replace with real image: <img src="speaker.jpg" alt="Dr. Sam Moonzwe speaking"> -->
+        <div class="ph">
+          Speaker Photo Placeholder
+          <small>Replace this block with a high-quality speaking photo (waist-up) for maximum credibility.</small>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ABOUT EMI (short text, clean) ===================== -->
+  <section class="section white">
+    <div class="container" style="max-width: 980px; text-align:center;">
+      <h2 style="font-size: clamp(26px, 3vw, 38px); margin:0 0 12px; font-weight:900; color: var(--forest);">
+        About Empowerment Ministries International (EMI)
+      </h2>
+      <p style="margin:0 auto; max-width: 78ch; font-size: 16.5px; line-height:1.7; color:#2b2b2b;">
+        Empowerment Ministries International (EMI) partners with local churches to strengthen biblical leadership, deepen missions engagement, and equip the Body of Christ through teaching rooted in Scripture and lived global ministry.
+      </p>
+      <p style="margin:12px auto 0; max-width: 78ch; font-size: 14px; color: var(--muted);">
+        EMI is a registered 501(c)(3) nonprofit organization in the State of California, serving churches across the United States and internationally.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== SPEAKER PROFILE (big image + minimal text) ===================== -->
+  <section class="section cream">
+    <div class="container split">
+
+      <!-- Large Portrait Placeholder -->
+      <div class="img-frame tall" aria-label="Speaker portrait placeholder">
+        <!-- Replace: <img src="portrait.jpg" alt="Dr. Sam Moonzwe portrait"> -->
+        <div class="ph">
+          Speaker Portrait Placeholder
+          <small>Replace with a clean portrait or podium shot. Keep it sharp and well-lit.</small>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 26px;">
+        <h2 style="margin:0 0 10px; font-size: 28px; font-weight: 900; color: var(--forest);">
+          Speaker Profile
+        </h2>
+
+        <p style="margin:0 0 12px; line-height:1.75; font-size: 15.5px; color:#242424;">
+          Dr. Samuel “Dr. Sam” Moonzwe is the co-founder and director of Empowerment Ministries International (EMI), a Christ-centered ministry committed to strengthening churches and advancing gospel engagement across Africa and the global Church.
+        </p>
+
+        <p style="margin:0 0 12px; line-height:1.75; font-size: 15.5px; color:#242424;">
+          He holds a Doctorate in Missiology and multiple master’s degrees in Theology, Intercultural Studies, Business Administration, and Management. He also serves faithfully in Bakersfield, California, helping lead the Missions Department and the School of Ministry.
+        </p>
+
+        <p style="margin:0; line-height:1.75; font-size: 15.5px; color:#242424;">
+          His background includes senior executive leadership, including service as CEO of a major Zambian corporation—uniting boardroom rigor with frontline mission experience.
+        </p>
+
+        <div style="margin-top:16px; padding:14px 14px; border-radius:16px; background: rgba(212,197,176,0.25); border:1px solid rgba(212,197,176,0.55);">
+          <div style="font-weight:900; color: var(--forest); margin-bottom:6px;">Booking Contact</div>
+          <div style="color:#2b2b2b; font-weight:700;" id="booking-email">ministry@example.com</div>
+          <div style="font-size: 13px; color: var(--muted); margin-top:4px;">
+            Prefer email? Click “Request a Speaker” above.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== EMI PROGRAMS (as requested) + big image above program descriptions ===================== -->
+  <section class="section white">
+    <div class="container">
+
+      <div style="text-align:center; max-width: 980px; margin:0 auto;">
+        <h2 style="font-size: clamp(28px, 3.2vw, 42px); margin:0 0 10px; font-weight: 900; color: var(--forest);">
+          EMI Programs
+        </h2>
+        <p style="margin:0 auto; max-width: 76ch; color:#2b2b2b; line-height:1.7;">
+          A snapshot of key programs through which EMI equips leaders, shares the Gospel, and supports communities with practical care.
+        </p>
+      </div>
+
+      <!-- Large Image Placeholder ABOVE programs (as you requested) -->
+      <div class="img-frame large" style="margin-top:22px;" aria-label="Programs image placeholder">
+        <!-- Replace: <img src="emi-programs.jpg" alt="EMI programs in action"> -->
+        <div class="ph">
+          EMI Programs Image Placeholder
+          <small>Use a wide photo collage: training, evangelism, dorm, water wells.</small>
+        </div>
+      </div>
+
+      <div class="programs-grid" style="margin-top:22px;">
+        <div class="prog">
+          <h3>Pastoral Training &amp; Church Planting</h3>
+          <p>Equipping pastors and church leaders with biblical depth, leadership formation, and practical tools for healthy churches and sustainable planting.</p>
+        </div>
+
+        <div class="prog">
+          <h3>Street &amp; Rural Evangelism</h3>
+          <p>Sharing Christ in public spaces and remote communities, with clear Gospel proclamation and compassionate presence.</p>
+        </div>
+
+        <div class="prog">
+          <h3>Girls Rescue Dorm Project</h3>
+          <p>Providing safe residential housing that helps protect vulnerable girls and support continued education in a secure environment.</p>
+        </div>
+
+        <div class="prog">
+          <h3>Community Development</h3>
+          <p>Strengthening communities through clean water initiatives and faith-rooted support that uplifts families and local churches.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SPEAKING TOPICS (tight + clean) ===================== -->
+  <section class="section cream">
+    <div class="container" style="max-width: 980px;">
+      <h2 style="text-align:center; font-size: clamp(26px, 3vw, 40px); margin:0 0 18px; font-weight: 900; color: var(--forest);">
+        Speaking Topics &amp; Ministry Focus
+      </h2>
+
+      <div class="card" style="padding: 22px;">
+        <div style="display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px;">
+          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
+            Biblical Leadership &amp; Servant Ministry
+          </div>
+          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
+            Missions &amp; the Global Church
+          </div>
+          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
+            Discipleship &amp; Gospel Engagement
+          </div>
+          <div style="padding:14px; border-radius:16px; background: rgba(245,241,232,0.70); border:1px solid rgba(212,197,176,0.55); font-weight:800; color: var(--forest);">
+            Cross-Cultural Ministry &amp; Partnership
+          </div>
+        </div>
+
+        <p style="margin:14px 0 0; color:#2b2b2b; line-height:1.7; font-size: 14.5px;">
+          Ideal settings include Sunday services, missions emphasis events, conferences, leadership retreats, and Schools of Ministry.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ARRANGEMENTS (short, high trust) ===================== -->
+  <section class="section white">
+    <div class="container" style="max-width: 980px;">
+      <h2 style="text-align:center; font-size: clamp(26px, 3vw, 40px); margin:0 0 18px; font-weight: 900; color: var(--forest);">
+        Engagement Arrangements
+      </h2>
+
+      <div class="split" style="align-items:stretch;">
+        <div class="card" style="padding: 22px;">
+          <div style="font-weight: 900; color: var(--forest); margin-bottom:8px;">Honorarium</div>
+          <p style="margin:0; color:#2b2b2b; line-height:1.7;">
+            Speaking engagements are based on a free-will offering. There is no minimum honorarium requirement.
+          </p>
+
+          <div style="height:12px;"></div>
+
+          <div style="font-weight: 900; color: var(--forest); margin-bottom:8px;">Travel &amp; Lodging (When Applicable)</div>
+          <p style="margin:0; color:#2b2b2b; line-height:1.7;">
+            Assistance may be requested for airfare or mileage and one night of lodging when distance or schedule requires. Logistics are discussed in advance.
+          </p>
+        </div>
+
+        <div class="img-frame large" aria-label="Engagement image placeholder">
+          <!-- Replace: <img src="engagement.jpg" alt="Church engagement"> -->
+          <div class="ph">
+            Engagement Image Placeholder
+            <small>Use an image of a church setting, leaders praying, or a conference stage.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA (premium) ===================== -->
+  <section class="section dark">
+    <div class="container" style="text-align:center; max-width: 980px;">
+      <h2 style="margin:0 0 10px; font-size: clamp(28px, 3.5vw, 46px); font-weight: 900;">
+        Ready to Invite Dr. Moonzwe?
+      </h2>
+      <p style="margin:0 auto 18px; max-width: 70ch; line-height:1.7; color: rgba(245,241,232,0.85);">
+        We value the local church and approach every invitation with humility, accountability, and respect for pastoral leadership.
+        If you’re considering an engagement, we would be honored to connect.
+      </p>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
+        <a class="btn btn-primary" id="cta-bottom-primary" href="mailto:ministry@example.com?subject=Speaker%20Request%20-%20EMI">
+          Request a Speaker
+        </a>
+        <a class="btn btn-secondary" id="cta-bottom-secondary" href="mailto:ministry@example.com?subject=15-Minute%20Ministry%20Call%20-%20EMI">
+          Schedule a 15-Minute Call
+        </a>
+      </div>
+
+      <div style="margin-top:18px; display:inline-block; padding: 12px 16px; border-radius: 16px; border:1px solid rgba(212,197,176,0.45); background: rgba(0,0,0,0.12);">
+        <span style="font-weight:800;">Email:</span>
+        <span id="cta-email" style="margin-left:8px; font-weight:700;">ministry@example.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div id="footer-text">© 2025 Empowerment Ministries International • A 501(c)(3) nonprofit organization</div>
+  </footer>
+
+  <!-- ===================== OPTIONAL: Config hooks (kept lightweight) ===================== -->
+  <script>
+    const defaultConfig = {
+      hero_name: 'Dr. Samuel “Dr. Sam” Moonzwe',
+      hero_subtitle: 'Mission Strategist • Bible Teacher • International Ministry Leader',
+      hero_description: 'Strengthening churches and equipping leaders through biblically grounded teaching, global mission experience, and faithful partnership with the local church.',
+      contact_email: 'ministry@example.com'
+    };
+
+    function setText(id, val){
+      const el = document.getElementById(id);
+      if(el) el.textContent = val;
+    }
+
+    async function onConfigChange(config){
+      setText('hero-name', config.hero_name || defaultConfig.hero_name);
+      setText('hero-subtitle', config.hero_subtitle || defaultConfig.hero_subtitle);
+      setText('hero-description', config.hero_description || defaultConfig.hero_description);
+
+      const email = config.contact_email || defaultConfig.contact_email;
+      setText('booking-email', email);
+      setText('cta-email', email);
+
+      // Update mailto links
+      const mailPrimary = `mailto:${email}?subject=Speaker%20Request%20-%20EMI`;
+      const mailSecondary = `mailto:${email}?subject=15-Minute%20Ministry%20Call%20-%20EMI`;
+
+      const ids = ['primary-cta','secondary-cta','cta-bottom-primary','cta-bottom-secondary'];
+      ids.forEach((i) => {
+        const a = document.getElementById(i);
+        if(!a) return;
+        a.href = (i.includes('secondary') ? mailSecondary : mailPrimary);
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: () => ({ recolorables: [], borderables: [] }),
+        mapToEditPanelValues: (cfg) => new Map([
+          ['hero_name', cfg.hero_name || defaultConfig.hero_name],
+          ['hero_subtitle', cfg.hero_subtitle || defaultConfig.hero_subtitle],
+          ['hero_description', cfg.hero_description || defaultConfig.hero_description],
+          ['contact_email', cfg.contact_email || defaultConfig.contact_email]
+        ])
+      });
+    }
+  </script>
+
+</body>
+</html>
