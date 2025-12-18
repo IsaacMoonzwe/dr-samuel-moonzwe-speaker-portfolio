@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Sam Moonzwe — Speaker Portfolio</title>
 
-  <!-- Keep your existing SDKs -->
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <title>Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio</title>
+  <meta name="description" content="Speaker portfolio for Dr. Samuel “Dr. Sam” Moonzwe (EMI). Bookings, ministry impact, programs, and engagement arrangements for churches and conferences." />
+
+  <!-- Open Graph (share preview) -->
+  <meta property="og:title" content="Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio" />
+  <meta property="og:description" content="Book Dr. Sam for churches, missions events, conferences, and leadership trainings. View ministry impact + EMI programs." />
+  <meta property="og:type" content="website" />
+  <!-- Optional: add a real image later (recommended). Example: images/og.jpg -->
+  <!-- <meta property="og:image" content="https://isaacmoonzwe.github.io/dr-samuel-moonzwe-speaker-portfolio/images/og.jpg" /> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== Typography: POPPINS (as requested) ===== */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
     :root{
       --bg: #f5f1e8;
       --forest: #1a3a2e;
@@ -35,7 +41,19 @@
       overflow-x:hidden;
     }
 
-    /* ===== Modern hero background ===== */
+    a { color: inherit; }
+
+    .container{
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .section{
+      padding: clamp(56px, 6vw, 92px) 24px;
+    }
+    .section.white{ background: var(--white); }
+    .section.cream{ background: var(--bg); }
+    .section.dark{ background: var(--forest); color: var(--cream); }
+
     .hero{
       position:relative;
       background: radial-gradient(900px 600px at 15% 20%, rgba(245,241,232,0.22), transparent 60%),
@@ -53,56 +71,6 @@
       pointer-events:none;
     }
 
-    /* ===== Layout helpers ===== */
-    .container{
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-    .section{
-      padding: clamp(56px, 6vw, 92px) 24px;
-    }
-    .section.white{ background: var(--white); }
-    .section.cream{ background: var(--bg); }
-    .section.dark{ background: var(--forest); color: var(--cream); }
-
-    /* ===== Premium card + shadow ===== */
-    .card{
-      background: var(--white);
-      border: 1px solid rgba(212,197,176,0.45);
-      border-radius: 20px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.08);
-    }
-
-    /* ===== Buttons ===== */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.6rem;
-      padding: 14px 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      text-decoration:none;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
-      user-select:none;
-      cursor:pointer;
-      border: 2px solid transparent;
-      white-space:nowrap;
-    }
-    .btn-primary{
-      background: var(--cream);
-      color: var(--forest);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.20);
-    }
-    .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 38px rgba(0,0,0,0.24); }
-    .btn-secondary{
-      background: rgba(245,241,232,0.12);
-      color: var(--cream);
-      border-color: rgba(212,197,176,0.55);
-    }
-    .btn-secondary:hover{ transform: translateY(-2px); background: rgba(245,241,232,0.18); }
-
-    /* ===== Headings ===== */
     .kicker{
       display:inline-flex;
       gap:.5rem;
@@ -129,7 +97,41 @@
       max-width: 56ch;
     }
 
-    /* ===== Image placeholders (speaker + programs) ===== */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.6rem;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 800;
+      text-decoration:none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      user-select:none;
+      cursor:pointer;
+      border: 2px solid transparent;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: var(--cream);
+      color: var(--forest);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.20);
+    }
+    .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 38px rgba(0,0,0,0.24); }
+    .btn-secondary{
+      background: rgba(245,241,232,0.12);
+      color: var(--cream);
+      border-color: rgba(212,197,176,0.55);
+    }
+    .btn-secondary:hover{ transform: translateY(-2px); background: rgba(245,241,232,0.18); }
+
+    .card{
+      background: var(--white);
+      border: 1px solid rgba(212,197,176,0.45);
+      border-radius: 20px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+    }
+
     .img-frame{
       position:relative;
       border-radius: 22px;
@@ -164,7 +166,6 @@
       color: rgba(245,241,232,0.80);
       letter-spacing: 0;
     }
-
     .img-frame img{
       width:100%;
       height:100%;
@@ -172,7 +173,6 @@
       display:block;
     }
 
-    /* ===== Hero grid ===== */
     .hero-grid{
       display:grid;
       gap: 28px;
@@ -184,7 +184,6 @@
       .img-frame.large{ min-height: 380px; }
     }
 
-    /* ===== Metrics strip ===== */
     .metrics{
       display:grid;
       grid-template-columns: repeat(4, minmax(0,1fr));
@@ -213,7 +212,6 @@
       line-height: 1.35;
     }
 
-    /* ===== Split sections with big images + little text ===== */
     .split{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -225,7 +223,6 @@
       .img-frame.tall{ min-height: 420px; }
     }
 
-    /* ===== Program cards ===== */
     .programs-grid{
       display:grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
@@ -249,7 +246,6 @@
     }
     .prog p{ margin:0; color:#333; line-height:1.55; font-size: 15.5px; }
 
-    /* ===== Footer ===== */
     footer{
       background: #151515;
       color: rgba(245,241,232,0.75);
@@ -262,10 +258,20 @@
 
 <body>
 
-  <!-- ===================== HERO (dynamic + big image) ===================== -->
+  <!-- ===================== CONFIG (edit these only) ===================== -->
+  <script>
+    // Change these values once and the page updates automatically.
+    window.SPEAKER_PAGE = {
+      contactEmail: "ministry@example.com",
+      speakerName: "Dr. Samuel “Dr. Sam” Moonzwe",
+      footerOrg: "Empowerment Ministries International",
+      footerYear: "2025"
+    };
+  </script>
+
+  <!-- ===================== HERO ===================== -->
   <header class="hero">
     <div class="container hero-grid">
-
       <div>
         <div class="kicker">Speaker Portfolio • Empowerment Ministries International</div>
 
@@ -280,15 +286,14 @@
         </p>
 
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:22px;">
-          <a class="btn btn-primary" id="primary-cta" href="mailto:ministry@example.com?subject=Speaker%20Request%20-%20EMI">
+          <a class="btn btn-primary" id="primary-cta" href="#">
             Request a Speaker
           </a>
-          <a class="btn btn-secondary" id="secondary-cta" href="mailto:ministry@example.com?subject=15-Minute%20Ministry%20Call%20-%20EMI">
+          <a class="btn btn-secondary" id="secondary-cta" href="#">
             Schedule a 15-Minute Ministry Call
           </a>
         </div>
 
-        <!-- Impact metrics (2025 highlights you specified) -->
         <div class="metrics" aria-label="Ministry impact metrics">
           <div class="metric">
             <div class="num">10,000+</div>
@@ -309,19 +314,17 @@
         </div>
       </div>
 
-      <!-- Big Speaker Image Placeholder -->
       <div class="img-frame large" aria-label="Speaker image placeholder">
-        <!-- Replace with real image: <img src="speaker.jpg" alt="Dr. Sam Moonzwe speaking"> -->
+        <!-- Replace later with: <img src="images/speaker-hero.jpg" alt="Dr. Sam Moonzwe speaking"> -->
         <div class="ph">
           Speaker Photo Placeholder
-          <small>Replace this block with a high-quality speaking photo (waist-up) for maximum credibility.</small>
+          <small>Replace with a high-quality speaking photo for maximum credibility.</small>
         </div>
       </div>
-
     </div>
   </header>
 
-  <!-- ===================== ABOUT EMI (short text, clean) ===================== -->
+  <!-- ===================== ABOUT EMI ===================== -->
   <section class="section white">
     <div class="container" style="max-width: 980px; text-align:center;">
       <h2 style="font-size: clamp(26px, 3vw, 38px); margin:0 0 12px; font-weight:900; color: var(--forest);">
@@ -336,16 +339,14 @@
     </div>
   </section>
 
-  <!-- ===================== SPEAKER PROFILE (big image + minimal text) ===================== -->
+  <!-- ===================== SPEAKER PROFILE ===================== -->
   <section class="section cream">
     <div class="container split">
-
-      <!-- Large Portrait Placeholder -->
       <div class="img-frame tall" aria-label="Speaker portrait placeholder">
-        <!-- Replace: <img src="portrait.jpg" alt="Dr. Sam Moonzwe portrait"> -->
+        <!-- Replace later with: <img src="images/speaker-portrait.jpg" alt="Dr. Sam Moonzwe portrait"> -->
         <div class="ph">
           Speaker Portrait Placeholder
-          <small>Replace with a clean portrait or podium shot. Keep it sharp and well-lit.</small>
+          <small>Replace with a clean portrait or podium shot.</small>
         </div>
       </div>
 
@@ -368,20 +369,18 @@
 
         <div style="margin-top:16px; padding:14px 14px; border-radius:16px; background: rgba(212,197,176,0.25); border:1px solid rgba(212,197,176,0.55);">
           <div style="font-weight:900; color: var(--forest); margin-bottom:6px;">Booking Contact</div>
-          <div style="color:#2b2b2b; font-weight:700;" id="booking-email">ministry@example.com</div>
+          <div style="color:#2b2b2b; font-weight:800;" id="booking-email">ministry@example.com</div>
           <div style="font-size: 13px; color: var(--muted); margin-top:4px;">
             Prefer email? Click “Request a Speaker” above.
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ===================== EMI PROGRAMS (as requested) + big image above program descriptions ===================== -->
+  <!-- ===================== EMI PROGRAMS ===================== -->
   <section class="section white">
     <div class="container">
-
       <div style="text-align:center; max-width: 980px; margin:0 auto;">
         <h2 style="font-size: clamp(28px, 3.2vw, 42px); margin:0 0 10px; font-weight: 900; color: var(--forest);">
           EMI Programs
@@ -391,9 +390,8 @@
         </p>
       </div>
 
-      <!-- Large Image Placeholder ABOVE programs (as you requested) -->
       <div class="img-frame large" style="margin-top:22px;" aria-label="Programs image placeholder">
-        <!-- Replace: <img src="emi-programs.jpg" alt="EMI programs in action"> -->
+        <!-- Replace later with: <img src="images/programs-wide.jpg" alt="EMI programs in action"> -->
         <div class="ph">
           EMI Programs Image Placeholder
           <small>Use a wide photo collage: training, evangelism, dorm, water wells.</small>
@@ -421,11 +419,10 @@
           <p>Strengthening communities through clean water initiatives and faith-rooted support that uplifts families and local churches.</p>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ===================== SPEAKING TOPICS (tight + clean) ===================== -->
+  <!-- ===================== SPEAKING TOPICS ===================== -->
   <section class="section cream">
     <div class="container" style="max-width: 980px;">
       <h2 style="text-align:center; font-size: clamp(26px, 3vw, 40px); margin:0 0 18px; font-weight: 900; color: var(--forest);">
@@ -455,7 +452,7 @@
     </div>
   </section>
 
-  <!-- ===================== ARRANGEMENTS (short, high trust) ===================== -->
+  <!-- ===================== ARRANGEMENTS ===================== -->
   <section class="section white">
     <div class="container" style="max-width: 980px;">
       <h2 style="text-align:center; font-size: clamp(26px, 3vw, 40px); margin:0 0 18px; font-weight: 900; color: var(--forest);">
@@ -475,10 +472,17 @@
           <p style="margin:0; color:#2b2b2b; line-height:1.7;">
             Assistance may be requested for airfare or mileage and one night of lodging when distance or schedule requires. Logistics are discussed in advance.
           </p>
+
+          <div style="height:12px;"></div>
+
+          <div style="font-weight: 900; color: var(--forest); margin-bottom:8px;">Involvement Cards</div>
+          <p style="margin:0; color:#2b2b2b; line-height:1.7;">
+            When appropriate, we may provide ministry involvement cards for attendees who want updates or partnership information. These are not pledge cards.
+          </p>
         </div>
 
         <div class="img-frame large" aria-label="Engagement image placeholder">
-          <!-- Replace: <img src="engagement.jpg" alt="Church engagement"> -->
+          <!-- Replace later with: <img src="images/engagement.jpg" alt="Church engagement"> -->
           <div class="ph">
             Engagement Image Placeholder
             <small>Use an image of a church setting, leaders praying, or a conference stage.</small>
@@ -488,7 +492,7 @@
     </div>
   </section>
 
-  <!-- ===================== FINAL CTA (premium) ===================== -->
+  <!-- ===================== FINAL CTA ===================== -->
   <section class="section dark">
     <div class="container" style="text-align:center; max-width: 980px;">
       <h2 style="margin:0 0 10px; font-size: clamp(28px, 3.5vw, 46px); font-weight: 900;">
@@ -500,17 +504,13 @@
       </p>
 
       <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
-        <a class="btn btn-primary" id="cta-bottom-primary" href="mailto:ministry@example.com?subject=Speaker%20Request%20-%20EMI">
-          Request a Speaker
-        </a>
-        <a class="btn btn-secondary" id="cta-bottom-secondary" href="mailto:ministry@example.com?subject=15-Minute%20Ministry%20Call%20-%20EMI">
-          Schedule a 15-Minute Call
-        </a>
+        <a class="btn btn-primary" id="cta-bottom-primary" href="#">Request a Speaker</a>
+        <a class="btn btn-secondary" id="cta-bottom-secondary" href="#">Schedule a 15-Minute Call</a>
       </div>
 
       <div style="margin-top:18px; display:inline-block; padding: 12px 16px; border-radius: 16px; border:1px solid rgba(212,197,176,0.45); background: rgba(0,0,0,0.12);">
-        <span style="font-weight:800;">Email:</span>
-        <span id="cta-email" style="margin-left:8px; font-weight:700;">ministry@example.com</span>
+        <span style="font-weight:900;">Email:</span>
+        <span id="cta-email" style="margin-left:8px; font-weight:800;">ministry@example.com</span>
       </div>
     </div>
   </section>
@@ -519,54 +519,38 @@
     <div id="footer-text">© 2025 Empowerment Ministries International • A 501(c)(3) nonprofit organization</div>
   </footer>
 
-  <!-- ===================== OPTIONAL: Config hooks (kept lightweight) ===================== -->
   <script>
-    const defaultConfig = {
-      hero_name: 'Dr. Samuel “Dr. Sam” Moonzwe',
-      hero_subtitle: 'Mission Strategist • Bible Teacher • International Ministry Leader',
-      hero_description: 'Strengthening churches and equipping leaders through biblically grounded teaching, global mission experience, and faithful partnership with the local church.',
-      contact_email: 'ministry@example.com'
-    };
+    // Wire up email + CTAs
+    (function(){
+      const cfg = window.SPEAKER_PAGE || {};
+      const email = cfg.contactEmail || "ministry@example.com";
 
-    function setText(id, val){
-      const el = document.getElementById(id);
-      if(el) el.textContent = val;
-    }
+      const nameEl = document.getElementById("hero-name");
+      if (nameEl && cfg.speakerName) nameEl.textContent = cfg.speakerName;
 
-    async function onConfigChange(config){
-      setText('hero-name', config.hero_name || defaultConfig.hero_name);
-      setText('hero-subtitle', config.hero_subtitle || defaultConfig.hero_subtitle);
-      setText('hero-description', config.hero_description || defaultConfig.hero_description);
+      const bookingEmail = document.getElementById("booking-email");
+      const ctaEmail = document.getElementById("cta-email");
+      if (bookingEmail) bookingEmail.textContent = email;
+      if (ctaEmail) ctaEmail.textContent = email;
 
-      const email = config.contact_email || defaultConfig.contact_email;
-      setText('booking-email', email);
-      setText('cta-email', email);
-
-      // Update mailto links
       const mailPrimary = `mailto:${email}?subject=Speaker%20Request%20-%20EMI`;
       const mailSecondary = `mailto:${email}?subject=15-Minute%20Ministry%20Call%20-%20EMI`;
 
-      const ids = ['primary-cta','secondary-cta','cta-bottom-primary','cta-bottom-secondary'];
-      ids.forEach((i) => {
-        const a = document.getElementById(i);
-        if(!a) return;
-        a.href = (i.includes('secondary') ? mailSecondary : mailPrimary);
-      });
-    }
+      const primary = document.getElementById("primary-cta");
+      const secondary = document.getElementById("secondary-cta");
+      const bottomPrimary = document.getElementById("cta-bottom-primary");
+      const bottomSecondary = document.getElementById("cta-bottom-secondary");
 
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities: () => ({ recolorables: [], borderables: [] }),
-        mapToEditPanelValues: (cfg) => new Map([
-          ['hero_name', cfg.hero_name || defaultConfig.hero_name],
-          ['hero_subtitle', cfg.hero_subtitle || defaultConfig.hero_subtitle],
-          ['hero_description', cfg.hero_description || defaultConfig.hero_description],
-          ['contact_email', cfg.contact_email || defaultConfig.contact_email]
-        ])
-      });
-    }
+      if (primary) primary.href = mailPrimary;
+      if (bottomPrimary) bottomPrimary.href = mailPrimary;
+      if (secondary) secondary.href = mailSecondary;
+      if (bottomSecondary) bottomSecondary.href = mailSecondary;
+
+      const footer = document.getElementById("footer-text");
+      if (footer && cfg.footerOrg && cfg.footerYear) {
+        footer.textContent = `© ${cfg.footerYear} ${cfg.footerOrg} • A 501(c)(3) nonprofit organization`;
+      }
+    })();
   </script>
 
 </body>
