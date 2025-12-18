@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio (EMI)</title>
-  <meta name="description" content="Invite Dr. Samuel “Dr. Sam” Moonzwe to speak. View EMI programs, ministry impact, and booking details for churches and conferences." />
+  <meta name="description" content="Invite Dr. Samuel “Dr. Sam” Moonzwe to speak. Explore EMI programs, ministry impact, and booking details for churches and conferences." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Dr. Samuel “Dr. Sam” Moonzwe — Speaker Portfolio (EMI)" />
@@ -69,7 +69,7 @@
     }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.12fr 0.88fr;
       gap:28px;
       align-items:center;
     }
@@ -123,12 +123,12 @@
       border-radius:16px;
       border:2px solid transparent;
       font-weight:900;
-      line-height:1;              /* alignment fix */
+      line-height:1;
       white-space:nowrap;
       user-select:none;
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
     }
-    .btn svg{ width:18px; height:18px; display:block; flex:0 0 auto; } /* icon alignment fix */
+    .btn svg{ width:18px; height:18px; display:block; flex:0 0 auto; }
     .btn-primary{
       background:var(--bg);
       color:var(--forest);
@@ -149,18 +149,28 @@
       border:1px solid rgba(212,197,176,.55);
       background:rgba(245,241,232,.06);
       box-shadow:0 24px 70px rgba(0,0,0,.18);
-      min-height:340px;
     }
-    .img-frame.large{ min-height:460px; }
+    .img-frame.large{ min-height:520px; }
     .img-frame.tall{ min-height:560px; }
     .img-frame img{ width:100%; height:100%; object-fit:cover; }
+    .frame-caption{
+      margin-top:10px;
+      font-size:13px;
+      font-weight:700;
+      color:rgba(245,241,232,.82);
+    }
+    .frame-caption.darkcap{ color:#2b2b2b; font-weight:700; }
 
-    /* Metrics */
+    /* Metrics (overflow fix) */
     .metrics{
       display:grid;
       grid-template-columns:repeat(4, minmax(0,1fr));
       gap:14px;
       margin-top:26px;
+      max-width:720px; /* prevents stretching too wide */
+    }
+    @media (max-width:1180px){
+      .metrics{ max-width:100%; }
     }
     @media (max-width:980px){
       .metrics{ grid-template-columns:repeat(2, minmax(0,1fr)); }
@@ -170,14 +180,16 @@
       background:rgba(245,241,232,.08);
       border-radius:18px;
       padding:16px;
-      min-height:92px; /* alignment fix */
+      min-height:104px;
       display:flex; flex-direction:column; justify-content:center;
     }
     .metric .num{
-      font-size:28px;
+      font-size:26px;
       font-weight:900;
       letter-spacing:-.01em;
-      margin:0 0 4px 0;
+      margin:0 0 6px 0;
+      line-height:1.05;
+      overflow-wrap:anywhere; /* prevents “Hundreds” type overflow */
     }
     .metric .lbl{
       margin:0;
@@ -211,6 +223,13 @@
       letter-spacing:-.01em;
       line-height:1.15;
     }
+    h3{
+      margin:0;
+      font-weight:900;
+      color:var(--forest);
+      font-size:18px;
+      line-height:1.25;
+    }
     .p{
       margin:0;
       color:#2b2b2b;
@@ -218,6 +237,25 @@
       font-size:15.5px;
     }
     .muted{ color:var(--muted); }
+
+    /* Speaker topics */
+    .topics{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:18px;
+    }
+    @media (max-width:980px){ .topics{ grid-template-columns:1fr; } }
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:#2b2b2b;
+      line-height:1.7;
+      font-size:15px;
+      font-weight:600;
+    }
+    .list li{ margin:8px 0; }
 
     /* Programs */
     .programs-top{
@@ -260,14 +298,7 @@
       background:rgba(245,241,232,.80);
       padding:18px;
       display:flex; flex-direction:column; gap:6px;
-      min-height:140px; /* alignment fix */
-    }
-    .prog h3{
-      margin:0;
-      font-size:18px;
-      font-weight:900;
-      color:var(--forest);
-      line-height:1.25;
+      min-height:150px;
     }
     .prog p{
       margin:0;
@@ -276,15 +307,14 @@
       color:#2b2b2b;
     }
 
-    /* Gallery */
-    .gallery{
+    /* Photo strip (no repetition) */
+    .photo-strip{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:14px;
       margin-top:18px;
     }
-    @media (max-width:980px){ .gallery{ grid-template-columns:1fr; } }
-
+    @media (max-width:980px){ .photo-strip{ grid-template-columns:1fr; } }
     figure{
       margin:0;
       border-radius:18px;
@@ -299,7 +329,7 @@
       font-size:13.5px;
       line-height:1.45;
       color:#2b2b2b;
-      font-weight:600;
+      font-weight:700;
     }
 
     /* Footer */
@@ -324,6 +354,19 @@
       text-decoration:underline;
       text-underline-offset:4px;
     }
+
+    /* Bio scroll (fits frame) */
+    .bio-scroll{
+      margin-top:14px;
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(212,197,176,.60);
+      background:rgba(212,197,176,.16);
+      max-height:330px;
+      overflow:auto;
+    }
+    .bio-scroll p{ margin:0 0 12px 0; }
+    .bio-scroll p:last-child{ margin-bottom:0; }
   </style>
 </head>
 
@@ -361,7 +404,6 @@
 
         <div class="btn-row">
           <a class="btn btn-primary" id="primary-cta" href="#">
-            <!-- mail icon -->
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 6.5h16v11H4v-11Z" stroke="currentColor" stroke-width="2" />
               <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="2" />
@@ -370,7 +412,6 @@
           </a>
 
           <a class="btn btn-secondary" id="secondary-cta" href="#">
-            <!-- calendar icon -->
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M7 3v3M17 3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               <path d="M4.5 7h15v13h-15V7Z" stroke="currentColor" stroke-width="2"/>
@@ -394,15 +435,18 @@
             <p class="lbl">Water wells sunk for community access to clean water</p>
           </div>
           <div class="metric">
-            <div class="num">Hundreds</div>
-            <p class="lbl">International conference attendance (hundreds present)</p>
+            <div class="num">300+</div>
+            <p class="lbl">Leaders gathered for international conference & training</p>
           </div>
         </div>
       </div>
 
-      <!-- HERO IMAGE: Dr. Sam + Maud (requested first) -->
-      <div class="img-frame large" aria-label="Dr. Sam and Maud at Mukalakwa Dorm Handover">
-        <img src="images/dr-sam-maud-mukalakwa-dorm-handover.png" alt="Dr. Sam and Maud at Mukalakwa Dorm handover">
+      <!-- HERO IMAGE: Dr. Sam + Maud -->
+      <div>
+        <div class="img-frame large" aria-label="Dr. Sam and Maud opening of dorm ceremony">
+          <img src="images/dr-sam-maud-mukalakwa-dorm-handover.png" alt="Dr. Sam and Maud at the opening of the Mukalakwa Girls Dorm ceremony">
+        </div>
+        <div class="frame-caption">Dr. Sam and Maud — Opening of Mukalakwa Girls Dorm Ceremony</div>
       </div>
 
     </div>
@@ -446,24 +490,32 @@
   <!-- ===================== SPEAKER PROFILE ===================== -->
   <section class="section cream">
     <div class="container split">
-      <div class="img-frame tall" aria-label="EMI ribbon ceremony">
-        <img src="images/emi-ribbon-ceremony.png" alt="EMI ribbon ceremony">
+      <div>
+        <div class="img-frame tall" aria-label="Dr. Samuel sharing in rural community in Zambia">
+          <img src="images/dr-sam.jpg" alt="Dr. Samuel sharing in a rural community in Zambia">
+        </div>
+        <div class="frame-caption darkcap">Dr. Samuel sharing in a rural community in Zambia</div>
       </div>
 
       <div class="card">
         <h2>Speaker Profile</h2>
 
-        <p class="p" style="margin-bottom:12px;">
+        <p class="p" style="margin-bottom:10px;">
           Dr. Samuel “Dr. Sam” Moonzwe serves as a mission strategist and Bible teacher through Empowerment Ministries International (EMI), equipping churches and leaders for faithful ministry and Gospel engagement.
         </p>
 
-        <p class="p" style="margin-bottom:12px;">
-          He holds a Doctorate in Missiology and master’s degrees in Theology, Intercultural Studies, Business Administration, and Management—bringing both scholarly depth and practical leadership experience to the pulpit and classroom.
-        </p>
-
-        <p class="p">
-          He also serves in Bakersfield, California, helping lead the Missions Department and the School of Ministry—supporting the local church in raising disciples and sending workers into the harvest.
-        </p>
+        <!-- Full bio that still fits (scroll) -->
+        <div class="bio-scroll" aria-label="Full biography">
+          <p class="p">
+            Dr. and Mrs. Moonzwe—founders of EMI and parents of three—bring uncommon depth in scholarship, ministry, and executive leadership. Dr. Moonzwe holds a Doctorate in Missiology and master’s degrees in Theology, Intercultural Studies, Business Administration, and Management.
+          </p>
+          <p class="p">
+            His career spans senior leadership, including service as CEO of a major Zambian corporation. Studied in Africa, Europe, and the USA, he unites boardroom rigor with frontline mission experience—helping leaders translate biblical conviction into practical mission impact.
+          </p>
+          <p class="p">
+            He also serves in Bakersfield, California, helping lead the Missions Department and the School of Ministry—supporting the local church in raising disciples and sending workers into the harvest.
+          </p>
+        </div>
 
         <div style="margin-top:16px; padding:14px; border-radius:18px; background:rgba(212,197,176,.22); border:1px solid rgba(212,197,176,.60);">
           <div style="font-weight:900; color:var(--forest); margin-bottom:6px;">Booking Contact</div>
@@ -473,6 +525,60 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== SPEAKING TOPICS + VENUES (NEW Section 3) ===================== -->
+  <section class="section white">
+    <div class="container" style="max-width:1140px;">
+      <div class="programs-top">
+        <h2>What Dr. Moonzwe Can Speak On</h2>
+        <p class="p" style="max-width:80ch; margin:0 auto;">
+          Biblically grounded, mission-shaped teaching designed to strengthen leaders, mobilize the church, and move congregations toward Gospel action.
+        </p>
+      </div>
+
+      <div class="topics">
+        <div class="card">
+          <h3>Core Topics</h3>
+          <ul class="list">
+            <li>Biblical leadership for pastors and ministry teams</li>
+            <li>Missions mobilization and cross-cultural ministry</li>
+            <li>Discipleship systems that multiply workers</li>
+            <li>Healthy church growth and church planting strategy</li>
+            <li>Community transformation through Gospel-centered development</li>
+            <li>Faith under pressure: strengthening the church in hard places</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Best-Fit Venues</h3>
+          <ul class="list">
+            <li>Sunday services and missions emphases</li>
+            <li>Leadership retreats and pastoral trainings</li>
+            <li>Conferences and ministry intensives</li>
+            <li>Church-planting cohorts and mission teams</li>
+            <li>Campus and community outreach gatherings</li>
+          </ul>
+
+          <div style="margin-top:16px; padding:14px; border-radius:18px; background:rgba(212,197,176,.18); border:1px solid rgba(212,197,176,.60);">
+            <div style="font-weight:900; color:var(--forest); margin-bottom:6px;">Quick Booking</div>
+            <p class="p" style="margin-bottom:10px;">
+              Share your date, location, and event type—EMI will respond with next steps.
+            </p>
+            <div class="btn-row" style="margin-top:0;">
+              <a class="btn btn-primary" id="topics-cta" href="#">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6.5h16v11H4v-11Z" stroke="currentColor" stroke-width="2" />
+                  <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="2" />
+                </svg>
+                Request a Speaker
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -521,52 +627,39 @@
           View All EMI Programs
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- ===================== IMPACT GALLERY ===================== -->
-  <section class="section cream">
-    <div class="container" style="max-width:1140px;">
-      <h2 style="text-align:center;">Ministry in Action</h2>
-      <p class="p" style="text-align:center; max-width:80ch; margin:0 auto;">
-        Real moments from the field—evangelism, community care, education support, and development initiatives.
-      </p>
-
-      <div class="gallery">
+      <!-- Photo highlights (no “program repetition” text) -->
+      <div class="photo-strip" aria-label="Photo highlights" style="margin-top:22px;">
         <figure>
-          <img src="images/emi-urban-rural-evangelism-team.png" alt="EMI urban and rural evangelism team">
-          <figcaption>Street &amp; Rural Evangelism — Gospel outreach teams serving communities.</figcaption>
+          <img src="images/emi-urban-rural-evangelism-team.png" alt="EMI evangelism team">
+          <figcaption>Street &amp; Rural Evangelism outreach team</figcaption>
+        </figure>
+        <figure>
+          <img src="images/emi-school-uniforms-distribution.jpg" alt="Uniforms distribution">
+          <figcaption>School uniforms distribution and student support</figcaption>
+        </figure>
+        <figure>
+          <img src="images/emi-zambia-borehole-handover.png" alt="Borehole handover">
+          <figcaption>Borehole handover supporting clean water access</figcaption>
         </figure>
 
         <figure>
-          <img src="images/emi-school-uniforms-distribution.jpg" alt="EMI school kids receiving uniforms">
-          <figcaption>Education Support — School children receiving uniforms and care.</figcaption>
+          <img src="images/EMI Vice President Providing Sanitary Kits (1).png" alt="Sanitary kits distribution">
+          <figcaption>Health &amp; dignity support for girls and women</figcaption>
         </figure>
-
-        <figure>
-          <img src="images/emi-zambia-borehole-handover.png" alt="EMI Zambia borehole handover">
-          <figcaption>Community Development — Borehole handover supporting access to clean water.</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/emi-sanitary-kits-distribution.png" alt="Sanitary kits distribution">
-          <figcaption>Health &amp; Dignity — Sanitary kits distribution supporting girls and women.</figcaption>
-        </figure>
-
         <figure>
           <img src="images/emi-womens-empowerment-program.png" alt="Women empowerment program">
-          <figcaption>Women’s Empowerment — Strengthening families and community resilience.</figcaption>
+          <figcaption>Women’s empowerment program strengthening families</figcaption>
         </figure>
-
         <figure>
           <img src="images/emi-school-visit-leadership.png" alt="School visit with leadership">
-          <figcaption>Community Partnership — School visit with leadership engagement and support.</figcaption>
+          <figcaption>School visit with leadership engagement and support</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- ===================== ARRANGEMENTS ===================== -->
+  <!-- ===================== ARRANGEMENTS (image updated) ===================== -->
   <section class="section white">
     <div class="container" style="max-width:980px;">
       <h2 style="text-align:center;">Engagement Arrangements</h2>
@@ -589,8 +682,11 @@
           </div>
         </div>
 
-        <div class="img-frame large" aria-label="EMI director with girls - programs support">
-          <img src="images/emi-director-with-girls-mukalakwa.png" alt="EMI director with girls from Mukalakwa">
+        <div>
+          <div class="img-frame large" aria-label="EMI ribbon cutting ceremony">
+            <img src="images/emi-ribbon-ceremony.png" alt="EMI ribbon cutting ceremony">
+          </div>
+          <div class="frame-caption darkcap">Ribbon cutting ceremony celebrating Gospel-centered community impact</div>
         </div>
       </div>
     </div>
@@ -653,18 +749,15 @@
       const nameEl = document.getElementById("hero-name");
       if (nameEl && cfg.speakerName) nameEl.textContent = cfg.speakerName;
 
-      // Mailto CTAs (booking)
+      // Mailto CTAs
       const mailPrimary = `mailto:${email}?subject=Speaker%20Request%20-%20EMI&body=Hello%20EMI%20Team%2C%0A%0AI%27d%20like%20to%20invite%20Dr.%20Sam%20Moonzwe%20to%20speak.%0A%0AChurch%2FOrganization%3A%20%0AEvent%20Type%3A%20%0APreferred%20Date(s)%3A%20%0ALocation%3A%20%0AExpected%20Attendance%3A%20%0A%0AThank%20you%2C%0A`;
       const mailSecondary = `mailto:${email}?subject=15-Minute%20Ministry%20Call%20-%20EMI&body=Hello%20EMI%20Team%2C%0A%0AI%27d%20like%20to%20schedule%20a%2015-minute%20call%20to%20discuss%20a%20speaking%20invitation.%0A%0ABest%20times%20to%20reach%20me%3A%20%0AName%3A%20%0APhone%3A%20%0A%0AThank%20you%2C%0A`;
 
-      const idsPrimary = ["primary-cta","cta-bottom-primary"];
-      const idsSecondary = ["secondary-cta","cta-bottom-secondary"];
-
-      idsPrimary.forEach(id => {
+      ["primary-cta","cta-bottom-primary","topics-cta"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.href = mailPrimary;
       });
-      idsSecondary.forEach(id => {
+      ["secondary-cta","cta-bottom-secondary"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.href = mailSecondary;
       });
