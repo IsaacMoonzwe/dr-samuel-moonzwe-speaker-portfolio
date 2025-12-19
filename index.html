@@ -734,17 +734,20 @@
 
       // Mailto CTAs
       const mailPrimary = `mailto:${email}?subject=Speaker%20Request%20-%20EMI&body=Hello%20EMI%20Team%2C%0A%0AI%27d%20like%20to%20invite%20Dr.%20Sam%20Moonzwe%20to%20speak.%0A%0AChurch%2FOrganization%3A%20%0AEvent%20Type%3A%20%0APreferred%20Date(s)%3A%20%0ALocation%3A%20%0AExpected%20Attendance%3A%20%0A%0AThank%20you%2C%0A`;
-      const mailSecondary = `mailto:${email}?subject=15-Minute%20Ministry%20Call%20-%20EMI&body=Hello%20EMI%20Team%2C%0A%0AI%27d%20like%20to%20schedule%20a%2015-minute%20call%20to%20discuss%20a%20speaking%20invitation.%0A%0ABest%20times%20to%20reach%20me%3A%20%0AName%3A%20%0APhone%3A%20%0A%0AThank%20you%2C%0A`;
+const bookingUrl = "https://calendar.app.google/mEGocdaHrKnxPSaP8";
 
       ["primary-cta","cta-bottom-primary","topics-cta"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.href = mailPrimary;
       });
-      ["secondary-cta","cta-bottom-secondary"].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.href = mailSecondary;
-      });
-
+    ["secondary-cta","cta-bottom-secondary"].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.href = bookingUrl;
+    el.target = "_blank";
+    el.rel = "noopener";
+  }
+});
       // Links
       const aboutUrl = cfg.aboutUrl || "https://empowermentministries.org/about/";
       const programsUrl = cfg.programsUrl || "https://empowermentministries.org/programs/";
@@ -775,6 +778,7 @@
 
 </body>
 </html>
+
 
 
 
