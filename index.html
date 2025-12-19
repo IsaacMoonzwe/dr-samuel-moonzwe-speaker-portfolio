@@ -230,58 +230,52 @@
   .metrics{ max-width:100%; }
 }
 
+@media (max-width:980px)/* Metrics (keep layout stable) */
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:14px;
+  margin-top:10px;
+  max-width:720px;
+}
+
+@media (max-width:1180px){
+  .metrics{ max-width:100%; }
+}
+
 @media (max-width:980px){
   .metrics{ grid-template-columns:repeat(2, minmax(0,1fr)); }
 }
 
-/* Cards */
 .metric{
-  border:1px solid rgba(212,197,176,.32);
-  background:linear-gradient(
-    180deg,
-    rgba(245,241,232,.10),
-    rgba(245,241,232,.06)
-  );
+  border:1px solid rgba(212,197,176,.30);
+  background:rgba(245,241,232,.08);
   border-radius:18px;
-
-  padding:16px 14px;
+  padding:16px;
   min-height:132px;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
 }
 
-/* Numbers */
 .metric .num{
-  font-size:27px;
+  font-size:26px;
   font-weight:900;
-  letter-spacing:-.015em;
-  line-height:1;
+  letter-spacing:-.01em;
+  line-height:1.05;
   margin:0;
 }
 
-/* Labels – EXACT 4 lines */
 .metric .lbl{
   margin:0;
-  font-size:13.4px;
-  line-height:1.32;
-  color:rgba(245,241,232,.88);
+  font-size:13.5px;
+  line-height:1.35;
+  color:rgba(245,241,232,.84);
   font-weight:500;
 
-  height:calc(1.32em * 4);
+  height:calc(1.35em * 4);  /* 4 lines, no cut sentences */
   overflow:hidden;
-}
-
-
-/* ===============================
-   HERO LAYOUT FIX
-   =============================== */
-
-/* Ensures image stays top-aligned even when left column grows */
-.hero-grid{
-  align-items:flex-start;
 }
 
     /* Cards / layout */
@@ -870,6 +864,7 @@ const bookingUrl = "https://calendar.app.google/mEGocdaHrKnxPSaP8";
 
 </body>
 </html>
+
 
 
 
