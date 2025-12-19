@@ -188,13 +188,13 @@
   font-weight:700;
 }
 
-
-    /* Metrics (2025 Highlights) */
+/* Metrics (2025 Highlights) */
 .metrics{
   display:grid;
   grid-template-columns:repeat(4, minmax(0,1fr));
   gap:14px;
-  margin-top:18px;              /* tighter under overline */
+
+  margin-top:6px;              /* ⬅️ MUCH tighter under overline */
   max-width:720px;
 }
 
@@ -213,8 +213,10 @@
     rgba(245,241,232,.06)
   );
   border-radius:18px;
-  padding:18px 16px;
-  min-height:118px;             /* equal tile height */
+
+  padding:16px 14px;           /* ⬅️ slightly tighter */
+  min-height:112px;            /* ⬅️ reduces vertical push */
+
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -223,7 +225,7 @@
 
 /* Numbers */
 .metric .num{
-  font-size:28px;
+  font-size:27px;              /* ⬅️ subtle balance */
   font-weight:900;
   letter-spacing:-.015em;
   line-height:1;
@@ -233,18 +235,16 @@
 /* Labels — force 3 lines */
 .metric .lbl{
   margin:0;
-  font-size:13.5px;
-  line-height:1.35;
+  font-size:13.4px;
+  line-height:1.32;
   color:rgba(245,241,232,.88);
   font-weight:500;
 
   display:-webkit-box;
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:3;         /* hard 3-line lock */
+  -webkit-line-clamp:3;
   overflow:hidden;
 }
-
-
     /* Cards / layout */
     .card{
       background:var(--white);
@@ -831,6 +831,7 @@ const bookingUrl = "https://calendar.app.google/mEGocdaHrKnxPSaP8";
 
 </body>
 </html>
+
 
 
 
