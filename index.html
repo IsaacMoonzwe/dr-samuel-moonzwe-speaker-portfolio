@@ -142,39 +142,84 @@
     }
     .btn-secondary:hover{ transform:translateY(-2px); background:rgba(245,241,232,.18); }
 
-    /* Image frames */
+/* ================================
+   Image Frames — Gold Standard
+================================ */
+
+/* Base frame */
 .img-frame{
-  border-radius:var(--radius);
+  position:relative;
+  width:100%;
+  border-radius:22px;
   overflow:hidden;
+
   border:1px solid rgba(212,197,176,.55);
-  background:radial-gradient(
-    circle at center,
-    rgba(255,255,255,.10),
-    rgba(0,0,0,.18)
-  );
-  box-shadow:0 24px 70px rgba(0,0,0,.18);
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255,255,255,.12),
+      rgba(0,0,0,.22)
+    );
+
+  box-shadow:
+    0 22px 55px rgba(0,0,0,.35),
+    0 6px 18px rgba(212,197,176,.18);
+
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    box-shadow .45s cubic-bezier(.22,1,.36,1),
+    filter .45s ease;
 }
 
 /* Sizes */
 .img-frame.large{ height:520px; }
 .img-frame.tall{ min-height:560px; }
 
-/* Default: photos with backgrounds */
+/* Image fills frame */
 .img-frame img{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center;
   display:block;
+  transition:transform .6s cubic-bezier(.22,1,.36,1);
 }
 
-/* Portrait / cut-out images (prevents awkward cuts) */
+/* Floating hover effect */
+.img-frame:hover{
+  transform:translateY(-10px);
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.45),
+    0 12px 30px rgba(212,197,176,.35);
+}
+
+/* Subtle image scale on hover */
+.img-frame:hover img{
+  transform:scale(1.04);
+}
+
+/* Portrait / cut-out images */
 .img-frame.portrait{
-  padding:22px;                /* breathing room */
+  padding:0; /* REMOVE breathing room — fill frame */
 }
+
 .img-frame.portrait img{
-  object-fit:contain;          /* no edge cropping */
-  filter:drop-shadow(0 14px 28px rgba(0,0,0,.35));
+  object-fit:cover;  /* fills frame */
+  filter:
+    drop-shadow(0 18px 36px rgba(0,0,0,.45))
+    drop-shadow(0 6px 14px rgba(212,197,176,.25));
 }
+
+/* Mobile refinement */
+@media (max-width:980px){
+  .img-frame.large{ height:420px; }
+
+  .img-frame:hover{
+    transform:translateY(-6px);
+  }
+}
+
 
 /* Captions */
 .frame-caption{
@@ -877,6 +922,7 @@ const bookingUrl = "https://calendar.app.google/mEGocdaHrKnxPSaP8";
 
 </body>
 </html>
+
 
 
 
