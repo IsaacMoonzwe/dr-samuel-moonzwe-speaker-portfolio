@@ -187,7 +187,6 @@
   color:#2b2b2b;
   font-weight:700;
 }
-
 /* ===============================
    2025 HIGHLIGHTS – METRICS
    =============================== */
@@ -222,43 +221,39 @@
   display:grid;
   grid-template-columns:repeat(4, minmax(0,1fr));
   gap:14px;
-  margin-top:4px;
-  max-width:720px;
-}
-
-@media (max-width:1180px){
-  .metrics{ max-width:100%; }
-}
-
-@media (max-width:980px)/* Metrics (keep layout stable) */
-.metrics{
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:14px;
   margin-top:10px;
   max-width:720px;
 }
 
+/* Tablet */
 @media (max-width:1180px){
-  .metrics{ max-width:100%; }
+  .metrics{
+    max-width:100%;
+  }
 }
 
+/* Mobile */
 @media (max-width:980px){
-  .metrics{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .metrics{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
 }
 
+/* Cards */
 .metric{
   border:1px solid rgba(212,197,176,.30);
   background:rgba(245,241,232,.08);
   border-radius:18px;
   padding:16px;
   min-height:132px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
 }
 
+/* Numbers */
 .metric .num{
   font-size:26px;
   font-weight:900;
@@ -267,6 +262,7 @@
   margin:0;
 }
 
+/* Labels — exactly 4 lines */
 .metric .lbl{
   margin:0;
   font-size:13.5px;
@@ -274,9 +270,10 @@
   color:rgba(245,241,232,.84);
   font-weight:500;
 
-  height:calc(1.35em * 4);  /* 4 lines, no cut sentences */
+  height:calc(1.35em * 4);
   overflow:hidden;
 }
+
 
     /* Cards / layout */
     .card{
@@ -465,81 +462,81 @@
   </script>
 
   <!-- ===================== HERO ===================== -->
-  <header class="hero">
-    <div class="container hero-grid">
+<header class="hero">
+  <div class="container hero-grid">
 
-      <div>
-        <div class="kicker"><span class="kdot"></span> Speaker Portfolio • Empowerment Ministries International</div>
+    <!-- LEFT COLUMN -->
+    <div>
+      <div class="kicker"><span class="kdot"></span> Speaker Portfolio • Empowerment Ministries International</div>
 
-        <h1 id="hero-name">Dr. Samuel “Dr. Sam” Moonzwe</h1>
+      <h1 id="hero-name">Dr. Samuel “Dr. Sam” Moonzwe</h1>
 
-        <p class="subhead" style="font-weight:700; margin-bottom:8px;">
-          Faith-driven leadership • Missions training • Global church strengthening
-        </p>
+      <p class="subhead" style="font-weight:700; margin-bottom:8px;">
+        Faith-driven leadership • Missions training • Global church strengthening
+      </p>
 
-        <p class="subhead">
-          Invite Dr. Sam to speak at your church or conference—bringing biblically grounded teaching, cross-cultural mission experience, and a practical call to Gospel action.
-        </p>
+      <p class="subhead">
+        Invite Dr. Sam to speak at your church or conference—bringing biblically grounded teaching, cross-cultural mission experience, and a practical call to Gospel action.
+      </p>
 
-        <div class="btn-row">
-          <a class="btn btn-primary" id="primary-cta" href="#">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 6.5h16v11H4v-11Z" stroke="currentColor" stroke-width="2" />
-              <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="2" />
-            </svg>
-            Request a Speaker
-          </a>
+      <div class="btn-row">
+        <a class="btn btn-primary" id="primary-cta" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6.5h16v11H4v-11Z" stroke="currentColor" stroke-width="2" />
+            <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="2" />
+          </svg>
+          Request a Speaker
+        </a>
 
-          <a class="btn btn-secondary" id="secondary-cta" href="#">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 3v3M17 3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M4.5 7h15v13h-15V7Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M7.5 11h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            Schedule a 15-Minute Ministry Call
-          </a>
-        </div>
-
-  <!-- 2025 HIGHLIGHTS (overline + metrics) -->
-<div class="metrics-wrap" aria-label="2025 highlights">
-  <div class="metrics-overline">2025 Highlights</div>
-
-  <div class="metrics" aria-label="Ministry impact metrics">
-    <div class="metric">
-      <div class="num">10,000+</div>
-      <p class="lbl">Gospel shared<br>across communities<br>in 2025</p>
-    </div>
-
-    <div class="metric">
-      <div class="num">~60</div>
-      <p class="lbl">Girls housed safely<br>through our first<br>student dorm</p>
-    </div>
-
-    <div class="metric">
-      <div class="num">4</div>
-      <p class="lbl">Water wells sunk<br>bringing clean water<br>to communities</p>
-    </div>
-
-    <div class="metric">
-      <div class="num">300+</div>
-      <p class="lbl">Leaders equipped<br>through training<br>& conferences</p>
-    </div>
-  </div>
-</div>
-
-<!-- HERO IMAGE: Dr. Sam -->
-<div>
-  <div class="img-frame large portrait" aria-label="Dr. Sam Moonzwe">
-    <img src="images/dr.samuel.png" alt="Dr. Samuel Moonzwe">
-  </div>
-</div>
-
-
-        <div class="frame-caption">Global Mission Leader • International Speaker • Missiologist</div>
+        <a class="btn btn-secondary" id="secondary-cta" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 3v3M17 3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4.5 7h15v13h-15V7Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M7.5 11h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Schedule a 15-Minute Ministry Call
+        </a>
       </div>
 
+      <!-- 2025 HIGHLIGHTS (overline + metrics) -->
+      <div class="metrics-wrap" aria-label="2025 highlights">
+        <div class="metrics-overline">2025 Highlights</div>
+
+        <div class="metrics" aria-label="Ministry impact metrics">
+          <div class="metric">
+            <div class="num">10,000+</div>
+            <p class="lbl">Gospel shared<br>across communities<br>in 2025</p>
+          </div>
+
+          <div class="metric">
+            <div class="num">~60</div>
+            <p class="lbl">Girls housed safely<br>through our first<br>student dorm</p>
+          </div>
+
+          <div class="metric">
+            <div class="num">4</div>
+            <p class="lbl">Water wells sunk<br>bringing clean water<br>to communities</p>
+          </div>
+
+          <div class="metric">
+            <div class="num">300+</div>
+            <p class="lbl">Leaders equipped<br>through training<br>& conferences</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+      <div class="img-frame large portrait" aria-label="Dr. Sam Moonzwe">
+        <img src="images/dr.samuel.png" alt="Dr. Samuel Moonzwe">
+      </div>
+      <div class="frame-caption">Global Mission Leader • International Speaker • Missiologist</div>
+    </div>
+
+  </div>
+</header>
+
 
   <!-- ===================== ABOUT / QUICK LINKS ===================== -->
   <section class="section white">
@@ -864,6 +861,7 @@ const bookingUrl = "https://calendar.app.google/mEGocdaHrKnxPSaP8";
 
 </body>
 </html>
+
 
 
 
